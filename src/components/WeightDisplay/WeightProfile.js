@@ -5,6 +5,7 @@ import WeightProfileTitle from './WeightProfileTitle';
 import LoadedBarbell from '../Barbell/LoadedBarbell';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import EditIcon from '@mui/icons-material/Edit';
 import './WeightProfile.css';
@@ -26,23 +27,20 @@ export default function WeightProfile() {
         setPlateAmount(updatedPlateAmount);
     }
     const unit = 'lb';
-    const toolTipText = `Plate Weight: ${totalWeight - barWeight}${unit} + Bar Weight: ${barWeight}${unit}`
-
-
-    console.log(toolTipText)
+    const toolTipText = `( Plate Weight: ${totalWeight - barWeight}${unit} ) + ( Bar Weight: ${barWeight}${unit} )`;
 
     return (
         <div className='weight-profile'>
             <div className='card'>
                 <div className='card--header'>
                     <div className='card--header-icon-reset'>
-                        <Tooltip title="Reset Plates" enterTouchDelay={0} disableFocusListener>
+                        <Tooltip title="Reset Plates" enterTouchDelay={0}>
                             <IconButton aria-label="reset" size="large" onClick={handleReset}>
                                 <RestartAltIcon fontSize="inherit" />
                             </IconButton>
                         </Tooltip>
                     </div>
-                    <Tooltip title={toolTipText} enterTouchDelay={0} disableFocusListener >
+                    <Tooltip title={toolTipText} enterTouchDelay={0} >
                         <h1 className='card--header-total'>{totalWeight} lb</h1>
                     </Tooltip>
                     <div className='card--header-icon-edit'>
