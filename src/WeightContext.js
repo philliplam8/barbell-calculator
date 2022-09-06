@@ -4,8 +4,13 @@ export const WeightContext = createContext();
 
 export const WeightProvider = props => {
 
-    const [totalWeight, setTotalWeight] = useState(0);
-    const [barWeight, setBarWeight] = useState(45);
+    // Initial Values
+    const INTIIAL_BAR_WEIGHT = 45; // Most common barbell weight
+    const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
+
+    // States
+    const [totalWeight, setTotalWeight] = useState(INITIAL_TOTAL_WEIGHT);
+    const [barWeight, setBarWeight] = useState(INTIIAL_BAR_WEIGHT);
     const [plateAmount, setPlateAmount] = useState({
         plates:
             [
