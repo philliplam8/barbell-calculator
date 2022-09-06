@@ -11,12 +11,13 @@ import './AddPlate.css';
 
 export default function AddPlate() {
 
-    const { totalWeightValue, plateAmountValue } = useContext(WeightContext);
+    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
     const [totalWeight, setTotalWeight] = totalWeightValue;
+    const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     const calculateTotalWeight = () => {
-        let total = 0;
+        let total = barWeight;
         for (const plate in plateAmount.plates) {
             total += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
         }
