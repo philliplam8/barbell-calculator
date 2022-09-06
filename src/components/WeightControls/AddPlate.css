@@ -1,0 +1,26 @@
+.plate-selection--controls {
+    min-height: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.change-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plate-selection--choices {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.plate-selection--change {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

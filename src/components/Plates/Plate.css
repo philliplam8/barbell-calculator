@@ -1,0 +1,64 @@
+.plate {
+    height: 149px;
+    border-radius: 9px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.plate--on {
+    display: inherit;
+}
+
+.plate--off {
+    display: none;
+}
+
+.plate--amount {
+    font-size: 12px;
+}
+
+.plate--width-large {
+    width: 30px;
+}
+
+.plate--width-medium {
+    width: 25px;
+}
+
+.plate--width-small {
+    width: 21px;
+}
+
+/* Specific Plates */
+
+.plate2point5 {
+    background-color: #9f9f9fc3;
+    font-size: small;
+}
+
+.plate5 {
+    background-color: #464646;
+}
+
+.plate10 {
+    background-color: black;
+}
+
+.plate25 {
+    background-color: #67A074;
+}
+
+.plate35 {
+    background-color: #DFBD0A;
+}
+
+.plate45 {
+    background-color: #6170ff;
+}
+
+.plate55 {
+    background-color: #ff6161;
+}

@@ -1,0 +1,12 @@
+.weight-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.weight--controls-card {
+    min-height: 400px;
+    height: auto;
+    width: 95%;
+    border-radius: 20px 20px 0 0;
+    background-color: #dedede;
+}

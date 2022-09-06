@@ -1,0 +1,17 @@
+.plate--button {
+    border: none;
+    cursor: pointer;
+    align-items: center;    
+}
+
+.plate--button:hover {
+    width: 35px;
+    height: 170px;
+    font-size: large;
+}
+
+.plate--button:focus {
+    width: 35px;
+    height: 170px;
+    font-size: large;
+}

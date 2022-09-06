@@ -1,0 +1,15 @@
+.profile {
+    position: relative;
+
+}
+
+.profile--name {
+    margin: 0;
+    font-weight: 100;
+}
+
+.profile--edit {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+}
