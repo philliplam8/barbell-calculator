@@ -1,6 +1,7 @@
 import { WeightProvider } from './WeightContext';
 import WeightProfile from "./components/WeightDisplay/WeightProfile";
 import WeightControls from "./components/WeightControls/WeightControls";
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <WeightProfile />
         <WeightControls />
       </WeightProvider>
+      <Footer />
     </div>
   );
 }
