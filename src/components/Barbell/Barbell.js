@@ -4,7 +4,7 @@ import './Barbell.css';
 
 export default function Barbell(props) {
 
-    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    const { barWeightValue } = useContext(WeightContext);
     const [barWeight, setBarWeight] = barWeightValue;
 
     const barbellButtonHandler = () => {

@@ -5,8 +5,7 @@ import './PlateSelector.css';
 
 export default function PlateSelector(props) {
 
-    const { totalWeightValue, plateAmountValue } = useContext(WeightContext);
-    const [totalWeight, setTotalWeight] = totalWeightValue;
+    const { plateAmountValue } = useContext(WeightContext);
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     const plateClickHandler = (e) => {
@@ -15,7 +14,7 @@ export default function PlateSelector(props) {
 
         // Create deep clone of plate state context
         let updatedPlateAmount = _.cloneDeep(plateAmount);
-        
+
         // Remove selected indicator for all plates
         for (const plate in updatedPlateAmount.plates) {
             updatedPlateAmount.plates[plate].currentlySelected = false;

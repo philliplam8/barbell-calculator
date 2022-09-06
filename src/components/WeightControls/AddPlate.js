@@ -11,7 +11,7 @@ import './AddPlate.css';
 
 export default function AddPlate() {
 
-    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    const { plateAmountValue } = useContext(WeightContext);
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     const getSelectedPlate = () => {
@@ -24,10 +24,6 @@ export default function AddPlate() {
             }
         }
         return selectedPlateKey;
-    }
-
-    const updateSelectedPlate = (selectedPlate) => {
-
     }
 
     const increment = () => {
