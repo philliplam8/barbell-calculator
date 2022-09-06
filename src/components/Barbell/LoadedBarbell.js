@@ -10,6 +10,8 @@ export default function LoadedBarbell() {
     const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
+    const unit = "lb";
+
     return (
         <div className='card--barbell'>
             <div className='barbell--plate-holder barbell--plate-holder-left'>
@@ -24,7 +26,7 @@ export default function LoadedBarbell() {
                 ))}
             </div>
             <div className='barbell--bar-container'>
-                <Barbell weight={barWeight} />
+                <Barbell weight={barWeight} unit={unit}/>
             </div>
             <div className='barbell--plate-holder'>
                 {[...plateAmount.plates].reverse().map(plate => (

@@ -6,7 +6,7 @@
 /* Barbell */
 
 .barbell--bar-container {
-    height: 149px;
+    height: auto;
     width: 100%;
     display: flex;
     align-items: center;

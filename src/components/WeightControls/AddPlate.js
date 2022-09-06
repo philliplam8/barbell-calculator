@@ -12,17 +12,7 @@ import './AddPlate.css';
 export default function AddPlate() {
 
     const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
-    const [totalWeight, setTotalWeight] = totalWeightValue;
-    const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
-
-    const calculateTotalWeight = () => {
-        let total = barWeight;
-        for (const plate in plateAmount.plates) {
-            total += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
-        }
-        setTotalWeight(total);
-    }
 
     const getSelectedPlate = () => {
 
@@ -83,11 +73,6 @@ export default function AddPlate() {
             }
         }
     }
-
-    // Update the Total Weight Displayed
-    useEffect(() => {
-        calculateTotalWeight();;
-    });
 
     return (
         <div className='plate-selection--controls'>
