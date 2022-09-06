@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { WeightContext } from '../../WeightContext';
 import Plate from '../Plates/Plate';
+import Barbell from './Barbell';
 import './LoadedBarbell.css';
 
 export default function LoadedBarbell() {
-    const { totalWeightValue, plateAmountValue } = useContext(WeightContext);
+    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
     const [totalWeight, setTotalWeight] = totalWeightValue;
+    const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     return (
@@ -22,11 +24,7 @@ export default function LoadedBarbell() {
                 ))}
             </div>
             <div className='barbell--bar-container'>
-                <div className='barbell--bar'>
-                    <div className='barbell--bar-text'>
-                        <p>45lb</p>
-                    </div>
-                </div>
+                <Barbell weight={barWeight} />
             </div>
             <div className='barbell--plate-holder'>
                 {[...plateAmount.plates].reverse().map(plate => (
