@@ -1,4 +1,6 @@
-import * as React from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { WeightContext } from '../../WeightContext';
+import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
@@ -27,14 +29,15 @@ function TabPanel(props) {
     );
 }
 
-// TabPanel.propTypes = {
-//     children: PropTypes.node,
-//     index: PropTypes.number.isRequired,
-//     value: PropTypes.number.isRequired,
-// };
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
 
 export default function ControlTabs() {
-    const [value, setValue] = React.useState(0);
+    const { currentTabValue } = useContext(WeightContext);
+    const [value, setValue] = currentTabValue;
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

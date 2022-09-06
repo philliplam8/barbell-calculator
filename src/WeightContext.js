@@ -9,6 +9,7 @@ export const WeightProvider = props => {
     const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 
     // States
+    const [tab, setTab] = useState(0);
     const [totalWeight, setTotalWeight] = useState(INITIAL_TOTAL_WEIGHT);
     const [barWeight, setBarWeight] = useState(INTIIAL_BAR_WEIGHT);
     const [plateAmount, setPlateAmount] = useState({
@@ -83,6 +84,7 @@ export const WeightProvider = props => {
     return (
         <WeightContext.Provider
             value={{
+                currentTabValue: [tab, setTab],
                 totalWeightValue: [totalWeight, setTotalWeight],
                 barWeightValue: [barWeight, setBarWeight],
                 plateAmountValue: [plateAmount, setPlateAmount]

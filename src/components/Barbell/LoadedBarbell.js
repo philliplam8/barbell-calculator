@@ -5,16 +5,26 @@ import Barbell from './Barbell';
 import './LoadedBarbell.css';
 
 export default function LoadedBarbell() {
-    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
-    const [totalWeight, setTotalWeight] = totalWeightValue;
+    const { currentTabValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    const [tab, setTab] = currentTabValue;
     const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     const unit = "lb";
 
+    // Switch to the Plate Tab if the user clicks on the Display Plates
+    const plateTabHandler = () => {
+        setTab(0);
+    }
+
+    // Switch to the Barbell Tab if the user clicks on the Display Barbell
+    const barbellTabHandler = () => {
+        setTab(1);
+    }
+
     return (
         <div className='card--barbell'>
-            <div className='barbell--plate-holder barbell--plate-holder-left'>
+            <div className='barbell--plate-holder barbell--plate-holder-left' onClick={plateTabHandler}>
                 {plateAmount.plates.map(plate => (
                     <Plate
                         key={plate.key}
@@ -25,10 +35,10 @@ export default function LoadedBarbell() {
                     />
                 ))}
             </div>
-            <div className='barbell--bar-container'>
-                <Barbell weight={barWeight} unit={unit}/>
+            <div className='barbell--bar-container' onClick={barbellTabHandler}>
+                <Barbell weight={barWeight} unit={unit} />
             </div>
-            <div className='barbell--plate-holder'>
+            <div className='barbell--plate-holder' onClick={plateTabHandler}>
                 {[...plateAmount.plates].reverse().map(plate => (
                     <Plate
                         key={plate.key}
