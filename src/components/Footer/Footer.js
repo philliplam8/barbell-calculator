@@ -8,15 +8,19 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-item footer-react">
-                <p>Built with</p>
-                <a href="https://reactjs.org/">
-                    <FontAwesomeIcon icon={faReact} />
-                </a>
+                <p>Built with
+                    <a href="https://reactjs.org/">
+                        <FontAwesomeIcon icon={faReact} />
+                    </a>
+                    by Phillip Lam</p>
             </div>
             <div className="footer-item footer-github">
-                <a href="https://github.com/philliplam8/barbell-calculator">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
+                <p>
+                    <a href="https://github.com/philliplam8/barbell-calculator">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                    Source Code
+                </p>
             </div>
         </div>
     );
