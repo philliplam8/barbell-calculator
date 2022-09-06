@@ -1,6 +1,6 @@
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import ControlTabs from './Tabs';
+import ControlTabs from './ControlTabs';
 // import SwipeableViews from 'react-swipeable-views';
 import './WeightControls.css';
 

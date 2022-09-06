@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { WeightContext } from '../../WeightContext';
 import _ from 'lodash';
 import WeightProfileTitle from './WeightProfileTitle';
-import Barbell from '../Barbell/Barbell';
+import LoadedBarbell from '../Barbell/LoadedBarbell';
 import IconButton from '@mui/material/IconButton';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import EditIcon from '@mui/icons-material/Edit';
@@ -39,7 +39,7 @@ export default function WeightProfile() {
                             <EditIcon fontSize="inherit" />
                         </IconButton></div>
                 </div>
-                <Barbell />
+                <LoadedBarbell />
             </div>
             <WeightProfileTitle />
         </div>

@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import AddPlate from './AddPlate';
+import AddBarbell from './AddBarbell';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -20,8 +21,8 @@ function TabPanel(props) {
                 <Box sx={{ p: 3 }}>
                     <Typography component={'span'} variant={'body2'}>{children}</Typography>
                 </Box>
-    )
-}
+            )
+            }
         </div>
     );
 }
@@ -53,6 +54,7 @@ export default function ControlTabs() {
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Select the barbell weight:
+                <AddBarbell />
             </TabPanel>
         </Box>
     );

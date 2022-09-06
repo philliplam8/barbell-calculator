@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { WeightContext } from '../../WeightContext';
 import Plate from '../Plates/Plate';
-import './Barbell.css';
+import './LoadedBarbell.css';
 
-export default function Barbell() {
+export default function LoadedBarbell() {
     const { totalWeightValue, plateAmountValue } = useContext(WeightContext);
     const [totalWeight, setTotalWeight] = totalWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
