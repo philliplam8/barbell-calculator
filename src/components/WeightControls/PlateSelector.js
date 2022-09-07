@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { WeightContext } from '../../WeightContext';
 import _ from 'lodash';
 import './PlateSelector.css';

@@ -12,11 +12,18 @@ export default function WeightControls() {
     const [plateAmount, setPlateAmount] = plateAmountValue;
 
     const calculateTotalWeight = () => {
-        let total = barWeight;
+
+        // Get total plate weight
+        let plateTotal = 0;
         for (const plate in plateAmount.plates) {
-            total += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
+            plateTotal += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
         }
-        setTotalWeight(total);
+
+        // Combine total plate weight and barbell weight
+        let updatedTotalWeight = barWeight + plateTotal;
+
+        // Update total weight displayed
+        setTotalWeight(updatedTotalWeight);
     }
 
     // Update the Total Weight Displayed

@@ -35,7 +35,7 @@ export default function WeightProfile() {
                 <div className='card--header'>
                     <div className='card--header-icon-reset'>
                         <Tooltip title="Reset Plates" enterTouchDelay={0}>
-                            <IconButton aria-label="reset" size="large" onClick={handleReset} disableFocusListener>
+                            <IconButton aria-label="reset" size="large" onClick={handleReset}>
                                 <RestartAltIcon fontSize="inherit" />
                             </IconButton>
                         </Tooltip>

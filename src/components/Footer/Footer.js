@@ -18,8 +18,8 @@ const Footer = () => {
                 <p>
                     <a href="https://github.com/philliplam8/barbell-calculator">
                         <FontAwesomeIcon icon={faGithub} />
+                        Source Code
                     </a>
-                    Source Code
                 </p>
             </div>
         </div>
