@@ -6,16 +6,32 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    user-select: none;
 }
+
+/* prevent select and highlight color */
+
+.card {
+    user-select: none;
+}
+
+.card::selection {
+    background: none;
+}
+
+.card::-moz-selection {
+    background: none;
+}
+/* ---------------------------------- */
 
 .card {
     /* height: 240.52px; */
     height: auto;
     width: 95%;
-    /* max-width: ; */
+    max-width: 1024px;
     border-radius: 20px;
     background-color: #dedede;
+    margin: 10px 0;
 }
 
 /* Card Header */
