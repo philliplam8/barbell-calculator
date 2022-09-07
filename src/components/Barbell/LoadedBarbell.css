@@ -22,6 +22,7 @@
     border-radius: 9px;
     display: flex;
     text-align: center;
+    cursor: pointer;
 }
 
 .barbell--plate-holder-left {
