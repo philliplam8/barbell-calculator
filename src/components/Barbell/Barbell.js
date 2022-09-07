@@ -13,7 +13,7 @@ export default function Barbell(props) {
     }
 
     return (
-        <div className='barbell--bar' onClick={barbellButtonHandler}>
+        <div className={`barbell--bar ${props.barbellClass}`} onClick={barbellButtonHandler}>
             <div className='barbell--bar-text'>
                 <p>{props.weight} {props.unit}</p>
             </div>

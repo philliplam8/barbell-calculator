@@ -5,6 +5,18 @@
     cursor: pointer;
 }
 
+.barbell--choice {
+    border-radius: 9px;
+    ;
+}
+
+.barbell--choice:hover {
+    height: 23px;
+    font-size: large;
+    color: white;
+    background-color: #6d6d6d;
+}
+
 .barbell--bar-text {
     position: relative;
     transform: translateY(-75%);
