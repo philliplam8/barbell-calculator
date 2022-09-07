@@ -11,7 +11,6 @@ export default function WeightProfileTitle(props) {
                 <IconButton aria-label="edit-title" size="small">
                     <EditIcon fontSize='inherit' />
                 </IconButton>
-
             </div>
         </div>
     )

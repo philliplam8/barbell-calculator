@@ -5,7 +5,7 @@ import WeightProfileTitle from './WeightProfileTitle';
 import LoadedBarbell from '../Barbell/LoadedBarbell';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import EditIcon from '@mui/icons-material/Edit';
 import './WeightProfile.css';
@@ -44,9 +44,16 @@ export default function WeightProfile() {
                         <h1 className='card--header-total'>{totalWeight} lb</h1>
                     </Tooltip>
                     <div className='card--header-icon-edit'>
-                        <IconButton aria-label="edit" size="large">
-                            <EditIcon fontSize="inherit" />
-                        </IconButton></div>
+                        <Tooltip
+                            title={toolTipText}
+                            placement='bottom-start'
+                            enterTouchDelay={0} >
+
+                            <IconButton aria-label="edit" size="large">
+                                <InfoOutlinedIcon fontSize="inherit" />
+                            </IconButton>
+                        </Tooltip>
+                    </div>
                 </div>
                 <LoadedBarbell />
             </div>
