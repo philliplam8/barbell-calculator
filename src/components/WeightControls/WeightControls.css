@@ -4,7 +4,7 @@
 }
 
 .weight--controls-card {
-    min-height: 350px;
+    /* min-height: 350px; */
     height: auto;
     width: 95%;
     max-width: 1024px;

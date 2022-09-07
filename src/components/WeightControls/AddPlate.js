@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { WeightContext } from '../../WeightContext';
 // import cloneDeep from 'lodash';
 import _ from 'lodash';

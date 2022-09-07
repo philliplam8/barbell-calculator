@@ -1,5 +1,5 @@
 .plate-selection--controls {
-    min-height: 250px;
+    /* max-height: 175px; */
     height: auto;
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 15px;
 }
 
 /* Increment/Decrement Buttons */
@@ -30,4 +31,5 @@
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: center; */
+    /* border: 1px solid black */
 }
