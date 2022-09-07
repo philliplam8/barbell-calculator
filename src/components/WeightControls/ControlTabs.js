@@ -1,10 +1,12 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { WeightContext } from '../../WeightContext';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import AnimationIcon from '@mui/icons-material/Animation';
 import AddPlate from './AddPlate';
 import AddBarbell from './AddBarbell';
 
@@ -47,8 +49,8 @@ export default function ControlTabs() {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} variant='fullWidth'>
-                    <Tab label="Plates" />
-                    <Tab label="Barbell" />
+                    <Tab icon={<AnimationIcon />} label="Plates" />
+                    <Tab icon={<FitnessCenterIcon />} label="Barbell" />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
