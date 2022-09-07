@@ -16,9 +16,7 @@ export default function AddBarbell() {
         if (customBarbellWeight >= 0) {
             setBarWeight(customBarbellWeight);
         }
-
     }
-
 
     return (
         <div className='barbell--choices'>
@@ -29,6 +27,7 @@ export default function AddBarbell() {
             <TextField
                 id="barbell-weight-custom"
                 type="number"
+                size="small"
                 label="Custom Barbell Weight"
                 variant="outlined"
                 onChange={barbellCustomHandler}

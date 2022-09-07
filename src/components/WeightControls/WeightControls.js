@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { WeightContext } from '../../WeightContext';
 import ControlTabs from './ControlTabs';
-// import SwipeableViews from 'react-swipeable-views';
 import './WeightControls.css';
 
 export default function WeightControls() {
@@ -10,6 +9,8 @@ export default function WeightControls() {
     const [totalWeight, setTotalWeight] = totalWeightValue;
     const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
+
+    const unit = 'lb';
 
     const calculateTotalWeight = () => {
 
@@ -28,7 +29,8 @@ export default function WeightControls() {
 
     // Update the Total Weight Displayed
     useEffect(() => {
-        calculateTotalWeight();;
+        calculateTotalWeight();
+        document.title = `Barbell Calculator - ${totalWeight}${unit}`
     });
 
     return (

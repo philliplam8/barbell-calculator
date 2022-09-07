@@ -8,6 +8,10 @@
     font-family: 'Roboto Mono', monospace;
 }
 
+.footer p {
+    margin: 0;
+}
+
 .footer-item svg {
     color: black;
     font-size: large;
