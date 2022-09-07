@@ -5,8 +5,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+
 }
+
+.plate--amount {
+    font-size: 12px;
+}
+
+/* Plate Display Status */
 
 .plate--on {
     display: inherit;
@@ -16,9 +22,8 @@
     display: none;
 }
 
-.plate--amount {
-    font-size: 12px;
-}
+
+/* Plate Widths */
 
 .plate--width-large {
     width: 30px;

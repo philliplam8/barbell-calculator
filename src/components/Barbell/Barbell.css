@@ -1,3 +1,4 @@
+/* Barbell Displayed */
 .barbell--bar {
     height: 20.79px;
     width: 100%;
@@ -5,9 +6,19 @@
     cursor: pointer;
 }
 
+.barbell--bar:hover {
+    color: white;
+    background-color: #6d6d6d;
+}
+
+.barbell--bar-selected {
+    color: white;
+    background-color: #6d6d6d;
+}
+
+/* Barbell Choice Buttons */
 .barbell--choice {
     border-radius: 9px;
-    ;
 }
 
 .barbell--choice:hover {

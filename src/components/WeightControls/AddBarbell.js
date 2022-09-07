@@ -28,8 +28,9 @@ export default function AddBarbell() {
                 id="barbell-weight-custom"
                 type="number"
                 size="small"
-                label="Custom Barbell Weight"
+                label="Custom Barbell Weight (lb)"
                 variant="outlined"
+                onClick={barbellCustomHandler}
                 onChange={barbellCustomHandler}
             >
             </TextField>

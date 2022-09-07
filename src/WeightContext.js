@@ -67,7 +67,7 @@ export const WeightProvider = props => {
                     amount: 0,
                     plateClass: 'plate45 plate--width-medium',
                     plateDisplay: 'plate--off',
-                    currentlySelected: true
+                    currentlySelected: false
                 },
                 {
                     key: 6,

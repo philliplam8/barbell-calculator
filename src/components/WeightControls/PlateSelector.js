@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { WeightContext } from '../../WeightContext';
 import Badge from '@mui/material/Badge';
 import _ from 'lodash';
@@ -9,6 +9,7 @@ export default function PlateSelector(props) {
     const { plateAmountValue } = useContext(WeightContext);
     const [plateAmount, setPlateAmount] = plateAmountValue;
     const count = plateAmount.plates[props.id].amount;
+    const [selectedClass, setSelectedClass] = useState('');
 
     const plateClickHandler = (e) => {
         console.log(`clicked ${e.currentTarget.id}`);
@@ -27,9 +28,19 @@ export default function PlateSelector(props) {
         setPlateAmount(updatedPlateAmount);
     }
 
+    // Update styling of selected plate
+    useEffect(() => {
+        if (plateAmount.plates[props.id].currentlySelected) {
+            setSelectedClass('plate--button-selected');
+        }
+        else {
+            setSelectedClass('');
+        }
+    }, [plateAmount.plates, props.id])
+
     return (
         <Badge badgeContent={count} color="primary">
-            <button id={`${props.id}`} className={`plate plate--button ${props.plateClass}`} onClick={plateClickHandler}>
+            <button id={`${props.id}`} className={`plate plate--button ${props.plateClass} ${selectedClass}`} onClick={plateClickHandler}>
                 {props.weight}
             </button>
         </Badge>
