@@ -3,15 +3,12 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-evenly; */
+    /* position: relative; */
 
 }
 
-.change-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* Plate Buttons */
 
 .plate-selection--choices {
     width: 100%;
@@ -19,8 +16,18 @@
     justify-content: space-evenly;
 }
 
+/* Increment/Decrement Buttons */
+
 .plate-selection--change {
+    /* position: absolute; */
+    /* bottom: 0%; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.change-button {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
 }
