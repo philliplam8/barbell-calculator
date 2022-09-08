@@ -11,7 +11,7 @@
 /* Name Input Field */
 
 .profile--name {
-    font-family: 'Roboto';
+    font-family: 'Roboto Mono', monospace;
     font-weight: 300;
     font-size: large;
     border: 2px solid white;
@@ -37,5 +37,5 @@
 .profile--icon {
     position: absolute;
     top: -30px;
-    left: 100%; 
+    left: 100%;
 }
