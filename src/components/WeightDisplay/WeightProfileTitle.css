@@ -1,15 +1,41 @@
 .profile {
-    position: relative;
-
+    /* position: relative; */
+    /* display: flex; */
+    align-items: center;
 }
+
+.profile--hidden {
+    display: none;
+}
+
+/* Name Input Field */
 
 .profile--name {
-    margin: 0;
-    font-weight: 100;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: large;
+    border: 2px solid white;
+    outline: 0;
+    height: 20px;
+    /* height: 23px; */
+    min-width: 5px;
+    padding: 2px 7px;
 }
 
-.profile--edit {
+.profile--name:hover {
+    border: 2px solid #dedede;
+    border-radius: 3px;
+}
+
+.profile--name:focus {
+    border: 2px solid #1976d2;
+    border-radius: 3px;
+}
+
+/* Edit/Submit Button */
+
+.profile--icon {
     position: absolute;
-    top: 0px;
-    left: 100%;
+    top: -30px;
+    left: 100%; 
 }
