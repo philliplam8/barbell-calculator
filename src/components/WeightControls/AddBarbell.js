@@ -24,12 +24,14 @@ export default function AddBarbell() {
             <Barbell weight={10} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={35} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={45} unit={unit} barbellClass={'barbell--choice'} />
+            <Barbell weight={55} unit={unit} barbellClass={'barbell--choice'} />
             <TextField
                 id="barbell-weight-custom"
                 type="number"
                 size="small"
                 label="Custom Barbell Weight (lb)"
                 variant="outlined"
+                placeholder="E.g. 12.5"
                 onClick={barbellCustomHandler}
                 onChange={barbellCustomHandler}
             >
