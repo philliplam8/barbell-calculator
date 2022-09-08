@@ -17,7 +17,7 @@ export default function WeightProfileTitle(props) {
     // When the user clicks on the title, select all the text within the input
     const titleClickHandler = () => {
         const inputTitleField = document.getElementsByClassName('profile--name')[0];
-        setIsToggle(!isToggle); 
+        setIsToggle(!isToggle);
         inputTitleField.focus();
         inputTitleField.select();
     }
@@ -30,7 +30,15 @@ export default function WeightProfileTitle(props) {
         if (title === '') {
             setTitle(TITLE_EMPTY);
         }
-        setIsToggle(!isToggle); 
+        setIsToggle(!isToggle);
+    }
+
+    const titleKeyUpHandler = (e) => {
+        // ENTER/RETURN keyCode is 13
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            e.target.blur();
+        }
     }
 
     const editButtonHandler = () => {
@@ -40,7 +48,7 @@ export default function WeightProfileTitle(props) {
     }
 
     const doneButtonHandler = () => {
-        setIsToggle(!isToggle);        
+        setIsToggle(!isToggle);
     }
 
     useEffect(() => {
@@ -50,16 +58,7 @@ export default function WeightProfileTitle(props) {
 
     return (
         <div className='profile'>
-            <input className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler}></input>
-
-            {/* <TextField
-                value={title}
-                variant='standard'
-                fullWidth={true}
-                sx={{ minWidth: 300 }}
-                onChange={titleHandler}
-            // disabled
-            /> */}
+            <input className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler}></input>
             <IconButton className='profile--icon' aria-label='edit-title' size='small' style={{ display: isToggle ? 'none' : 'block' }} onClick={editButtonHandler}>
                 <EditIcon fontSize='inherit' />
             </IconButton>
