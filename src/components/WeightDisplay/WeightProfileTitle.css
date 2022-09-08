@@ -1,7 +1,7 @@
 .profile {
-    /* position: relative; */
+    /* /* position: relative; */
     /* display: flex; */
-    align-items: center;
+    /* align-items: center; */
 }
 
 .profile--hidden {
@@ -17,7 +17,6 @@
     border: 2px solid white;
     outline: 0;
     height: 20px;
-    /* height: 23px; */
     min-width: 5px;
     padding: 2px 7px;
 }
@@ -36,6 +35,6 @@
 
 .profile--icon {
     position: absolute;
-    top: -30px;
+    top: -28px;
     left: 100%;
 }
