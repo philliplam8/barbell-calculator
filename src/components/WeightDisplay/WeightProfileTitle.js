@@ -1,17 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useContext, useRef } from 'react';
+import { WeightContext } from '../../WeightContext';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
 import './WeightProfileTitle.css';
 
-const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
-const TITLE_EMPTY = 'UNTITLED PROFILE';
-
 export default function WeightProfileTitle() {
-
+    const TITLE_EMPTY = 'UNTITLED PROFILE';
+    const { titleValue } = useContext(WeightContext);
+    const [title, setTitle] = titleValue;
     const [isToggle, setIsToggle] = useState(false);
-    const [title, setTitle] = useState(TITLE_DEFAULT);
-
     const inputRef = useRef(null);
 
     // When the user clicks on the title, select all the text within the input
