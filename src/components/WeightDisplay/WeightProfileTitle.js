@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import { Typography } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { useEffect, useState, useRef } from 'react';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
@@ -9,15 +7,18 @@ import './WeightProfileTitle.css';
 const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
 const TITLE_EMPTY = 'UNTITLED PROFILE';
 
-export default function WeightProfileTitle(props) {
+export default function WeightProfileTitle() {
 
     const [isToggle, setIsToggle] = useState(false);
     const [title, setTitle] = useState(TITLE_DEFAULT);
 
+    const inputRef = useRef(null);
+
     // When the user clicks on the title, select all the text within the input
-    const titleClickHandler = () => {
-        const inputTitleField = document.getElementsByClassName('profile--name')[0];
+    const titleClickHandler = (e) => {
         setIsToggle(!isToggle);
+
+        const inputTitleField = e.target;
         inputTitleField.focus();
         inputTitleField.select();
     }
@@ -26,13 +27,15 @@ export default function WeightProfileTitle(props) {
         setTitle(e.target.value);
     }
 
+    // If the user leaves the input field empty and leaves it, auto-input the TITLE_EMPTY title
     const titleBlurHandler = () => {
         if (title === '') {
             setTitle(TITLE_EMPTY);
         }
-        setIsToggle(!isToggle);
+        setIsToggle(false);
     }
 
+    // Unfocus the input field after the ENTER/RETURN key is pressed
     const titleKeyUpHandler = (e) => {
         // ENTER/RETURN keyCode is 13
         if (e.keyCode === 13) {
@@ -41,24 +44,25 @@ export default function WeightProfileTitle(props) {
         }
     }
 
+    // When clicking the edit button, focus the input field and switch the button icon to the checkmark
     const editButtonHandler = () => {
         setIsToggle(!isToggle);
-        const inputTitleField = document.getElementsByClassName('profile--name')[0];
-        inputTitleField.focus();
+        inputRef.current.focus();
     }
 
+    // When clicking the checkmark button, switch the button icon to the edit icon
     const doneButtonHandler = () => {
         setIsToggle(!isToggle);
     }
 
+    // Dynamically update the input width based on the input text length
     useEffect(() => {
-        const inputTitleField = document.getElementsByClassName('profile--name')[0];
-        inputTitleField.style.width = `${title.length}ch`;
+        inputRef.current.style.width = `${title.length}ch`;
     })
 
     return (
         <div className='profile'>
-            <input className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler}></input>
+            <input ref={inputRef} className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler}></input>
             <IconButton className='profile--icon' aria-label='edit-title' size='small' style={{ display: isToggle ? 'none' : 'block' }} onClick={editButtonHandler}>
                 <EditIcon fontSize='inherit' />
             </IconButton>
