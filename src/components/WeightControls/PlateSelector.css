@@ -17,3 +17,7 @@
     font-size: large;
     box-shadow: -3px -2px grey;
 }
+
+.plate--button-unselected {
+    opacity: 50%;
+}
