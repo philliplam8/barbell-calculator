@@ -18,6 +18,15 @@ export default function AddBarbell() {
         }
     }
 
+    // Unfocus the input field after the ENTER/RETURN key is pressed
+    const inputKeyUpHandler = (e) => {
+        // ENTER/RETURN keyCode is 13
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            e.target.blur();
+        }
+    }
+
     return (
         <div className='barbell--choices'>
             <Barbell weight={0} unit={unit} barbellClass={'barbell--choice'} />
@@ -34,6 +43,7 @@ export default function AddBarbell() {
                 placeholder="E.g. 12.5"
                 onClick={barbellCustomHandler}
                 onChange={barbellCustomHandler}
+                onKeyUp={inputKeyUpHandler}
             >
             </TextField>
         </div>
