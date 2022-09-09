@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './Plate.css';
 
 export default function Plate(props) {

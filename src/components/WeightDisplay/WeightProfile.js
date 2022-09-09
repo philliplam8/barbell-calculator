@@ -40,15 +40,17 @@ export default function WeightProfile() {
                             </IconButton>
                         </Tooltip>
                     </div>
-                    <Tooltip title={toolTipText} enterTouchDelay={0} >
-                        <h1 className='card--header-total'>{totalWeight} lb</h1>
+                    <Tooltip title={toolTipText} enterTouchDelay={0} arrow>
+                        <div>
+                            <h1 className='card--header-total'>{totalWeight} lb</h1>
+                        </div>
                     </Tooltip>
+
                     <div className='card--header-icon-edit'>
                         <Tooltip
                             title={toolTipText}
                             placement='bottom-start'
                             enterTouchDelay={0} >
-
                             <IconButton aria-label="edit" size="large">
                                 <InfoOutlinedIcon fontSize="inherit" />
                             </IconButton>

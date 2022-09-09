@@ -76,31 +76,39 @@ export default function AddPlate() {
                 <PlateSelector
                     id='0'
                     weight='2.5'
-                    plateClass='plate2point5 plate--width-large' />
+                    plateClass='plate2point5 plate--width-large'
+                    increment={increment}
+                />
                 <PlateSelector
                     id='1'
                     weight='5'
-                    plateClass='plate5 plate--width-large' />
+                    plateClass='plate5 plate--width-large'
+                    increment={increment} />
                 <PlateSelector
                     id='2'
                     weight='10'
-                    plateClass='plate10 plate--width-large' />
+                    plateClass='plate10 plate--width-large'
+                    increment={increment} />
                 <PlateSelector
                     id='3'
                     weight='25'
-                    plateClass='plate25 plate--width-large' />
+                    plateClass='plate25 plate--width-large'
+                    increment={increment} />
                 <PlateSelector
                     id='4'
                     weight='35'
-                    plateClass='plate35 plate--width-large' />
+                    plateClass='plate35 plate--width-large'
+                    increment={increment} />
                 <PlateSelector
                     id='5'
                     weight='45'
-                    plateClass='plate45 plate--width-large' />
+                    plateClass='plate45 plate--width-large'
+                    increment={increment} />
                 <PlateSelector
                     id='6'
                     weight='55'
-                    plateClass='plate55 plate--width-large' />
+                    plateClass='plate55 plate--width-large'
+                    increment={increment} />
             </div>
             <div className='plate-selection--change'>
                 <div className='plate-selection--decrement change-button'>
