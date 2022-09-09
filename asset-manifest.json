@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/barbell-calculator/static/css/main.c6280f47.css",
+    "main.css": "/barbell-calculator/static/css/main.cd2f6494.css",
     "main.js": "/barbell-calculator/static/js/main.06decb06.js",
     "static/js/787.28cb0dcd.chunk.js": "/barbell-calculator/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/barbell-calculator/index.html",
-    "main.c6280f47.css.map": "/barbell-calculator/static/css/main.c6280f47.css.map",
+    "main.cd2f6494.css.map": "/barbell-calculator/static/css/main.cd2f6494.css.map",
     "main.06decb06.js.map": "/barbell-calculator/static/js/main.06decb06.js.map",
     "787.28cb0dcd.chunk.js.map": "/barbell-calculator/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6280f47.css",
+    "static/css/main.cd2f6494.css",
     "static/js/main.06decb06.js"
   ]
 }
