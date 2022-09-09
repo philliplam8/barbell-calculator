@@ -28,7 +28,7 @@ h1 {
 .card {
     height: auto;
     width: 95%;
-    max-width: 1024px;
+    max-width: 768px;
     border-radius: 20px;
     background-color: #dedede;
     margin: 10px 0;
