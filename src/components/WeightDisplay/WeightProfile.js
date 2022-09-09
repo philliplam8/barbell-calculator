@@ -44,7 +44,7 @@ export default function WeightProfile() {
         <div className='weight-profile'>
             <div className='card'>
                 <div className='card--header'>
-                    <div className='card--header-icon-reset'>
+                    <div className='card--header-icon card--header-icon-reset'>
                         <Tooltip title="Reset Plates" enterTouchDelay={0}>
                             <IconButton aria-label="reset" size="large" onClick={handleReset}>
                                 <RestartAltIcon fontSize="inherit" />
@@ -65,7 +65,7 @@ export default function WeightProfile() {
                     </div>
 
 
-                    <div className='card--header-icon-edit'>
+                    <div className='card--header-icon card--header-icon-edit'>
                         <Tooltip
                             title={toolTipText}
                             placement='bottom-start'

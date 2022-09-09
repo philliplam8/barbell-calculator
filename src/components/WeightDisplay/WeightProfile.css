@@ -22,6 +22,7 @@ h1 {
 .card::-moz-selection {
     background: none;
 }
+
 /* ---------------------------------- */
 
 .card {
@@ -43,15 +44,16 @@ h1 {
     text-align: center;
 }
 
-.card--header-icon-reset {
+.card--header-icon {
     position: absolute;
-    top: -3px;
+    top: 1px;
+}
+
+.card--header-icon-reset {
     left: 40px;
     z-index: 2;
 }
 
 .card--header-icon-edit {
-    position: absolute;
-    top: -4px;
     right: 40px
 }
