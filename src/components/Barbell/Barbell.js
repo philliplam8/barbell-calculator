@@ -17,7 +17,7 @@ export default function Barbell(props) {
     useEffect(() => {
         if (props.weight === barWeight) {
             setSelectedClass('barbell--bar-selected');
-        } 
+        }
         else {
             setSelectedClass('');
         }

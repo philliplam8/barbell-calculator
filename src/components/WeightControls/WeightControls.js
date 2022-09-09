@@ -29,7 +29,9 @@ export default function WeightControls() {
 
     // Update the Total Weight Displayed
     useEffect(() => {
+        // Update Header Total
         calculateTotalWeight();
+        // Update Page Title
         document.title = `Barbell Calculator - ${totalWeight}${unit}`
     });
 

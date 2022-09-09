@@ -25,7 +25,6 @@ h1 {
 /* ---------------------------------- */
 
 .card {
-    /* height: 240.52px; */
     height: auto;
     width: 95%;
     max-width: 1024px;
@@ -47,7 +46,8 @@ h1 {
 .card--header-icon-reset {
     position: absolute;
     top: -3px;
-    left: 40px
+    left: 40px;
+    z-index: 2;
 }
 
 .card--header-icon-edit {

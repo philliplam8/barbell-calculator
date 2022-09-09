@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { WeightContext } from '../../WeightContext';
 import _ from 'lodash';
 import WeightProfileTitle from './WeightProfileTitle';
@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import EditIcon from '@mui/icons-material/Edit';
+import { motion, useAnimationControls } from "framer-motion"
 import './WeightProfile.css';
 
 export default function WeightProfile() {
@@ -29,6 +30,16 @@ export default function WeightProfile() {
     const unit = 'lb';
     const toolTipText = `( Plate Weight: ${totalWeight - barWeight}${unit} ) + ( Bar Weight: ${barWeight}${unit} )`;
 
+    // Animation
+    const controls = useAnimationControls()
+    useEffect(() => {
+        controls.start({
+            scale: [1, 1.2, 1],
+            translateY: ['0px', '-5px', '5px'],
+            color: ["#000000", "#67a074", "#000000"]
+        });
+    }, [controls, totalWeight]);
+
     return (
         <div className='weight-profile'>
             <div className='card'>
@@ -40,11 +51,19 @@ export default function WeightProfile() {
                             </IconButton>
                         </Tooltip>
                     </div>
-                    <Tooltip title={toolTipText} enterTouchDelay={0} arrow>
-                        <div>
-                            <h1 className='card--header-total'>{totalWeight} lb</h1>
-                        </div>
-                    </Tooltip>
+
+                    <div>
+                        <motion.div
+                            initial={false}
+                            animate={controls}
+                            transition={{ times: [0, 0.05, 0.95] }}
+                        >
+                            <Tooltip title={toolTipText} enterTouchDelay={0} arrow>
+                                <h1 className='card--header-total'>{totalWeight} lb</h1>
+                            </Tooltip>
+                        </motion.div>
+                    </div>
+
 
                     <div className='card--header-icon-edit'>
                         <Tooltip
