@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import AnimationIcon from '@mui/icons-material/Animation';
-import HelpToolTip from './HelpToolTip';
 import AddPlate from './AddPlate';
 import AddBarbell from './AddBarbell';
 
@@ -55,17 +54,9 @@ export default function ControlTabs() {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <HelpToolTip
-                    title='Select a weight plate and use the - / + buttons to add or remove plates'
-                    ariaLabel='select-plate-instructions'
-                />
                 <AddPlate />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <HelpToolTip
-                    title='Click on a barbell weight or enter a custom weight'
-                    ariaLabel='barbell-selection-instructions'
-                />
                 <AddBarbell />
             </TabPanel>
         </Box>
