@@ -5,7 +5,7 @@ import Barbell from './Barbell';
 import './LoadedBarbell.css';
 
 function DisplayPlateGroup(props) {
-
+    const PLATE_SLEEVE_THRESHOLD = 5;
     const { totalPlatesValue } = useContext(WeightContext);
     const [totalPlates, setTotalPlates] = totalPlatesValue;
 
@@ -21,7 +21,7 @@ function DisplayPlateGroup(props) {
     }
 
     // Collapse into group once there are more than 5 plates on either barbell sleeve
-    if (totalPlates / 2 > 5) {
+    if (totalPlates / 2 > PLATE_SLEEVE_THRESHOLD) {
         return (
             <Plate
                 key={`${props.weight}-${props.key}`}
