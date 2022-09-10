@@ -2,8 +2,7 @@
 Quickly calculate the total barbell/plate weight during your workout set!
 
 https://philliplam8.github.io/barbell-calculator/
-
-[![Demo](https://user-images.githubusercontent.com/81057116/189502840-0624d22c-466b-4ff2-944f-ad910283ae20.png)](https://philliplam8.github.io/barbell-calculator)
+[![Demo](https://user-images.githubusercontent.com/81057116/189503343-91db0420-d861-46c9-9e33-4b8cb940763e.gif)](https://philliplam8.github.io/barbell-calculator)
 
 ## Features
 
