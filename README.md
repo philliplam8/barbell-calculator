@@ -1,1 +1,22 @@
-# barbell-calculator
+# Barbell Calculator 💪
+Quickly calculate the total barbell/plate weight during your workout set!
+
+https://philliplam8.github.io/barbell-calculator/
+
+[![Demo](https://user-images.githubusercontent.com/81057116/189502840-0624d22c-466b-4ff2-944f-ad910283ae20.png)](https://philliplam8.github.io/barbell-calculator)
+
+## Features
+
+### Easily Adjust Weight Plates
+
+- Select any of the pre-defined weight plates and use the - / + buttons to change the amount of plates
+- Click on the top left reset icon to clear all plates
+- Plates displayed will automatically collapse into a group once more than five plates have been added on the barbell sleeve.
+
+### Choose Custom Barbell Weight
+
+- Select any of the pre-defined barbell weights or enter a custom weight
+
+### Weight Summary
+
+- Hover over the total weight to get a summary of the total weight from plates and barbell
