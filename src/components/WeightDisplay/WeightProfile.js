@@ -54,7 +54,6 @@ export default function WeightProfile() {
 
                     <div>
                         <motion.div
-                            initial={false}
                             animate={controls}
                             transition={{ times: [0, 0.05, 0.95] }}
                         >
@@ -63,7 +62,6 @@ export default function WeightProfile() {
                             </Tooltip>
                         </motion.div>
                     </div>
-
 
                     <div className='card--header-icon card--header-icon-edit'>
                         <Tooltip

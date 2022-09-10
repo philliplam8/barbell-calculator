@@ -5,7 +5,8 @@ import './WeightControls.css';
 
 export default function WeightControls() {
 
-    const { totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    const { totalPlatesValue, totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    const [totalPlates, setTotalPlates] = totalPlatesValue;
     const [totalWeight, setTotalWeight] = totalWeightValue;
     const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
@@ -14,17 +15,22 @@ export default function WeightControls() {
 
     const calculateTotalWeight = () => {
 
-        // Get total plate weight
-        let plateTotal = 0;
+        // Get total plate weight and total plates
+        let newTotalWeight = 0;
+        let newTotalPlates = 0;
         for (const plate in plateAmount.plates) {
-            plateTotal += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
+            newTotalWeight += plateAmount.plates[plate].weight * plateAmount.plates[plate].amount;
+            newTotalPlates += plateAmount.plates[plate].amount;
         }
 
         // Combine total plate weight and barbell weight
-        let updatedTotalWeight = barWeight + plateTotal;
+        let updatedTotalWeight = barWeight + newTotalWeight;
 
         // Update total weight displayed
         setTotalWeight(updatedTotalWeight);
+
+        // Update total number of plates
+        setTotalPlates(newTotalPlates);
     }
 
     // Update the Total Weight Displayed

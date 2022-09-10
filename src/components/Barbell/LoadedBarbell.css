@@ -12,13 +12,29 @@
     align-items: center;
 }
 
+.barbell--sleeve {
+    height: 45px;
+    width: auto;
+    background-color: #c5c5c5;
+    border: solid #59595955 0.1px;
+    align-items: center;
+}
+
+.barbell--sleeve-left {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.barbell--sleeve-right {
+    border-radius: 3px 0px 0px 3px;
+}
+
 /* Plates */
 
 .barbell--plate-holder {
     width: 123px;
     height: 149px;
     background-color: #c5c5c5;
-    border: inset;
+    border: #9a9a9a;
     border-radius: 9px;
     display: flex;
     text-align: center;
@@ -28,4 +44,8 @@
 .barbell--plate-holder-left {
     display: flex;
     justify-content: flex-end;
+}
+
+.barbell--plate-holder .plate {
+    border: solid #59595955 0.1px;
 }

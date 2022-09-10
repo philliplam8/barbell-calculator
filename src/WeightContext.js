@@ -12,6 +12,7 @@ export const WeightProvider = props => {
     // States
     const [title, setTitle] = useState(TITLE_DEFAULT);
     const [tab, setTab] = useState(0);
+    const [totalPlates, setTotalPlates] = useState(0);
     const [totalWeight, setTotalWeight] = useState(INITIAL_TOTAL_WEIGHT);
     const [barWeight, setBarWeight] = useState(INTIIAL_BAR_WEIGHT);
     const [plateAmount, setPlateAmount] = useState({
@@ -88,6 +89,7 @@ export const WeightProvider = props => {
             value={{
                 titleValue: [title, setTitle],
                 currentTabValue: [tab, setTab],
+                totalPlatesValue: [totalPlates, setTotalPlates],
                 totalWeightValue: [totalWeight, setTotalWeight],
                 barWeightValue: [barWeight, setBarWeight],
                 plateAmountValue: [plateAmount, setPlateAmount]

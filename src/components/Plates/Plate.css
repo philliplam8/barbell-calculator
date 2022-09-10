@@ -1,3 +1,4 @@
+/* Plate General */
 .plate {
     height: 149px;
     border-radius: 9px;
@@ -6,6 +7,13 @@
     flex-direction: column;
     justify-content: space-around;
 
+}
+
+.plate--text {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .plate--amount {
@@ -37,7 +45,7 @@
     width: 21px;
 }
 
-/* Specific Plates */
+/* Specific Plate Types */
 
 .plate2point5 {
     background-color: #9f9f9fc3;
