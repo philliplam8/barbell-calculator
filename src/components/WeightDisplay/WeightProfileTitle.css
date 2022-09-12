@@ -34,7 +34,7 @@
 /* Edit/Submit Button */
 
 .profile--icon {
-    position: absolute;
+    position: block;
     top: -28px;
     left: 100%;
 }
