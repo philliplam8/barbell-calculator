@@ -5,12 +5,10 @@ export const WeightContext = createContext();
 export const WeightProvider = props => {
 
     // Initial Values
-    const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
     const INTIIAL_BAR_WEIGHT = 45; // Most common barbell weight
     const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 
     // States
-    const [title, setTitle] = useState(TITLE_DEFAULT);
     const [tab, setTab] = useState(0);
     const [totalPlates, setTotalPlates] = useState(0);
     const [totalWeight, setTotalWeight] = useState(INITIAL_TOTAL_WEIGHT);
@@ -87,7 +85,6 @@ export const WeightProvider = props => {
     return (
         <WeightContext.Provider
             value={{
-                titleValue: [title, setTitle],
                 currentTabValue: [tab, setTab],
                 totalPlatesValue: [totalPlates, setTotalPlates],
                 totalWeightValue: [totalWeight, setTotalWeight],
