@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import './Barbell.css';
 
 export default function Barbell(props) {

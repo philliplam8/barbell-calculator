@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import Badge from '@mui/material/Badge';
 import _ from 'lodash';
 import './PlateSelector.css';

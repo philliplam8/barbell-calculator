@@ -1,14 +1,19 @@
 import { useEffect, useState, useContext, useRef } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
 import './WeightProfileTitle.css';
 
 export default function WeightProfileTitle() {
+    const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
     const TITLE_EMPTY = 'UNTITLED PROFILE';
-    const { titleValue } = useContext(WeightContext);
-    const [title, setTitle] = titleValue;
+    // const { titleValue } = useContext(WeightContext);
+    // const [title, setTitle] = titleValue;
+    const [title, setTitle] = useState(() => {
+        const saved = localStorage.getItem("profileTitle");
+        return saved || TITLE_DEFAULT;
+    })
     const [isToggle, setIsToggle] = useState(false);
     const inputRef = useRef(null);
 
@@ -57,6 +62,11 @@ export default function WeightProfileTitle() {
     useEffect(() => {
         inputRef.current.style.width = `${title.length}ch`;
     })
+
+    // Watch for changes to the profile title and add to localStorage
+    useEffect(() => {
+        localStorage.setItem('profileTitle', title);
+    }, [title, setTitle]);
 
     return (
         <div className='profile'>

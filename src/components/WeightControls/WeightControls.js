@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import ControlTabs from './ControlTabs';
 import './WeightControls.css';
 

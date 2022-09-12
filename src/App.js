@@ -1,4 +1,4 @@
-import { WeightProvider } from './WeightContext';
+import { WeightProvider } from './contexts/WeightContext';
 import WeightProfile from "./components/WeightDisplay/WeightProfile";
 import WeightControls from "./components/WeightControls/WeightControls";
 import Footer from './components/Footer/Footer';

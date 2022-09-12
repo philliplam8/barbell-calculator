@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';

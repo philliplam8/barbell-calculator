@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import Plate from '../Plates/Plate';
 import Barbell from './Barbell';
 import './LoadedBarbell.css';

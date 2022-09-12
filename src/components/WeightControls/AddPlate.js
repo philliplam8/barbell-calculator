@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 // import cloneDeep from 'lodash';
 import _ from 'lodash';
 import IconButton from '@mui/material/IconButton';

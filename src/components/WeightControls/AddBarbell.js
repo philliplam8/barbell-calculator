@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import Barbell from '../Barbell/Barbell';
 import TextField from '@mui/material/TextField';
 import './AddBarbell.css';

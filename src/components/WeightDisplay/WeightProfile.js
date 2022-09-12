@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { WeightContext } from '../../WeightContext';
+import { WeightContext } from '../../contexts/WeightContext';
 import _ from 'lodash';
 import WeightProfileTitle from './WeightProfileTitle';
 import LoadedBarbell from '../Barbell/LoadedBarbell';
