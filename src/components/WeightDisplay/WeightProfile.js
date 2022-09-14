@@ -45,7 +45,7 @@ export default function WeightProfile() {
             <div className='card'>
                 <div className='card--header'>
                     <div className='card--header-icon card--header-icon-menu'>
-                        <Tooltip title={'Switch Weight Profile'} enterTouchDelay={0} >
+                        <Tooltip title={'Switch Weight Profile (feature in progress!)'} enterTouchDelay={0} >
                             <IconButton aria-label="menu" size="large">
                                 <ExpandMoreIcon fontSize="inherit" />
                             </IconButton>
