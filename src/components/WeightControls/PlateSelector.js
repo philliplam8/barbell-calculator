@@ -12,7 +12,6 @@ export default function PlateSelector(props) {
     const [selectedClass, setSelectedClass] = useState('');
 
     const plateClickHandler = (e) => {
-        console.log(`clicked ${e.currentTarget.id}`);
         const clickedPlateKey = e.currentTarget.id;
 
         // Create deep clone of plate state context

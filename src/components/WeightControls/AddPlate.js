@@ -28,7 +28,6 @@ export default function AddPlate() {
 
     const increment = () => {
         const selectedPlate = getSelectedPlate();
-        // console.log(`Adding selected plate... ${plateAmount.plates[selectedPlate].plateName}`);
 
         if (selectedPlate) {
             // Get deep copy of plate context
@@ -49,7 +48,6 @@ export default function AddPlate() {
 
     const decrement = () => {
         const selectedPlate = getSelectedPlate();
-        // console.log(`Removing selected plate... ${plateAmount.plates[selectedPlate].plateName}`);
 
         if (selectedPlate) {
             // Get deep copy of plate context

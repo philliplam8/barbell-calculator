@@ -20,7 +20,6 @@ export default function WeightProfile() {
     const toolTipText = `( Plate Weight: ${totalWeight - barWeight}${unit} ) + ( Bar Weight: ${barWeight}${unit} )`;
 
     const handleReset = () => {
-        console.log("Clicked Reset");
         let updatedPlateAmount = _.cloneDeep(plateAmount);
         for (const plate in updatedPlateAmount.plates) {
             updatedPlateAmount.plates[plate].amount = 0;
