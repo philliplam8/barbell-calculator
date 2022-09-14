@@ -28,6 +28,6 @@ https://philliplam8.github.io/barbell-calculator/
 ## Roadmap
 - [x] Collapse plates of the same type on the display once a plate amount threshold is reached
 - [x] Store single weight profile in localStorage
-- [] Allow user to create and switch between multiple weight profiles
-- [] Store multiple weight profiles in localStorage
-- [] Custom plate values
+- [ ] Allow user to create and switch between multiple weight profiles
+- [ ] Store multiple weight profiles in localStorage
+- [ ] Custom plate values
