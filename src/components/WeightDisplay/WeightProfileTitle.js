@@ -1,4 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useContext, useState, useRef } from 'react';
+import { WeightContext, INITIAL_WEIGHT_PROFILE } from '../../contexts/WeightContext';
+import { useLocalStorage } from '../../useLocalStorage';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
@@ -6,12 +8,16 @@ import './WeightProfileTitle.css';
 
 export default function WeightProfileTitle() {
 
-    const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
     const TITLE_EMPTY = 'UNTITLED PROFILE';
-    const [title, setTitle] = useState(() => {
-        const saved = localStorage.getItem("profileTitle");
-        return saved || TITLE_DEFAULT;
-    })
+    const LOCAL_STORAGE_OBJECT_KEY = 'profileTitle';
+
+    const { profileTitleValue } = useContext(WeightContext);
+    // const [title, setTitle] = profileTitleValue;
+    const [titleContext, setTitleContext] = profileTitleValue;
+    const [title, setTitle] = useLocalStorage(
+        LOCAL_STORAGE_OBJECT_KEY,
+        INITIAL_WEIGHT_PROFILE.profileTitle,
+        setTitleContext);
 
     const [isToggle, setIsToggle] = useState(false);
     const inputRef = useRef(null);
@@ -25,6 +31,7 @@ export default function WeightProfileTitle() {
         inputTitleField.select();
     }
 
+    // As the user is typing in the title input field, update the title state
     const titleChangeHandler = (e) => {
         setTitle(e.target.value);
     }
@@ -60,12 +67,7 @@ export default function WeightProfileTitle() {
     // Dynamically update the input width based on the input text length
     useEffect(() => {
         inputRef.current.style.width = `${title.length}ch`;
-    })
-
-    // Watch for changes to the profile title and add to localStorage
-    useEffect(() => {
-        localStorage.setItem('profileTitle', title);
-    }, [title, setTitle]);
+    });
 
     return (
         <div className='profile'>

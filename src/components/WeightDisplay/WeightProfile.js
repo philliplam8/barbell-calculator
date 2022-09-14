@@ -5,9 +5,8 @@ import WeightProfileTitle from './WeightProfileTitle';
 import LoadedBarbell from '../Barbell/LoadedBarbell';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import EditIcon from '@mui/icons-material/Edit';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion, useAnimationControls } from "framer-motion"
 import './WeightProfile.css';
 
@@ -16,6 +15,9 @@ export default function WeightProfile() {
     const [barWeight, setBarWeight] = barWeightValue;
     const [totalWeight, setTotalWeight] = totalWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
+
+    const unit = 'lb';
+    const toolTipText = `( Plate Weight: ${totalWeight - barWeight}${unit} ) + ( Bar Weight: ${barWeight}${unit} )`;
 
     const handleReset = () => {
         console.log("Clicked Reset");
@@ -27,8 +29,6 @@ export default function WeightProfile() {
         }
         setPlateAmount(updatedPlateAmount);
     }
-    const unit = 'lb';
-    const toolTipText = `( Plate Weight: ${totalWeight - barWeight}${unit} ) + ( Bar Weight: ${barWeight}${unit} )`;
 
     // Animation
     const controls = useAnimationControls()
@@ -44,10 +44,10 @@ export default function WeightProfile() {
         <div className='weight-profile'>
             <div className='card'>
                 <div className='card--header'>
-                    <div className='card--header-icon card--header-icon-reset'>
-                        <Tooltip title="Reset Plates" enterTouchDelay={0}>
-                            <IconButton aria-label="reset" size="large" onClick={handleReset}>
-                                <RestartAltIcon fontSize="inherit" />
+                    <div className='card--header-icon card--header-icon-menu'>
+                        <Tooltip title={'Switch Weight Profile'} enterTouchDelay={0} >
+                            <IconButton aria-label="menu" size="large">
+                                <ExpandMoreIcon fontSize="inherit" />
                             </IconButton>
                         </Tooltip>
                     </div>
@@ -63,16 +63,14 @@ export default function WeightProfile() {
                         </motion.div>
                     </div>
 
-                    <div className='card--header-icon card--header-icon-edit'>
-                        <Tooltip
-                            title={toolTipText}
-                            placement='bottom-start'
-                            enterTouchDelay={0} >
-                            <IconButton aria-label="edit" size="large">
-                                <InfoOutlinedIcon fontSize="inherit" />
+                    <div className='card--header-icon card--header-icon-reset'>
+                        <Tooltip title="Reset Plates" enterTouchDelay={0}>
+                            <IconButton aria-label="reset" size="large" onClick={handleReset}>
+                                <RestartAltIcon fontSize="inherit" />
                             </IconButton>
                         </Tooltip>
                     </div>
+
                 </div>
                 <LoadedBarbell />
             </div>

@@ -49,11 +49,12 @@ h1 {
     top: 1px;
 }
 
-.card--header-icon-reset {
+.card--header-icon-menu {
     left: 40px;
     z-index: 2;
 }
 
-.card--header-icon-edit {
-    right: 40px
+.card--header-icon-reset {
+    right: 40px;
+    z-index: 2;
 }
