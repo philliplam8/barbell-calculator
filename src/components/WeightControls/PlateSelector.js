@@ -40,7 +40,7 @@ export default function PlateSelector(props) {
     return (
         <Badge badgeContent={count} color="primary">
             <button
-                id={`${props.id}`}
+                id={props.id}
                 className={`plate plate--button ${props.plateClass} ${selectedClass} ${selectedClass ? '' : 'plate--button-unselected'}`}
                 onMouseDown={plateClickHandler}
                 onClick={props.increment}>

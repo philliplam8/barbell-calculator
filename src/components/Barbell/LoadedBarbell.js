@@ -24,7 +24,8 @@ function DisplayPlateGroup(props) {
     if (totalPlates / 2 > PLATE_SLEEVE_THRESHOLD) {
         return (
             <Plate
-                key={`${props.weight}-${props.key}`}
+                id={`${props.key}-${props.weight}`}
+                key={`${props.key}-${props.weight}`}
                 weight={props.weight}
                 amount={`x${props.amount / 2}`}
                 plateClass={props.plateClass}
@@ -37,7 +38,8 @@ function DisplayPlateGroup(props) {
         // Render all instances of the same weight plate type
         return samePlateGroup.map((plateInstance) => (
             <Plate
-                key={`${props.weight}-${plateInstance.key}`}
+                id={`${props.key}-${props.weight}`}
+                key={`${props.key}-${props.weight}-${plateInstance.key}`}
                 weight={props.weight}
                 // amount={`x${props.amount / 2}`}
                 plateClass={props.plateClass}
