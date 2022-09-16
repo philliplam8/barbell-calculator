@@ -6,13 +6,15 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    user-select: none;
 }
 
 /* prevent select and highlight color */
 
 .card {
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .card::selection {
