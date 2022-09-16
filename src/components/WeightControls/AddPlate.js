@@ -1,13 +1,17 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { WeightContext } from '../../contexts/WeightContext';
 // import cloneDeep from 'lodash';
 import _ from 'lodash';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Snackbar from '@mui/material/Snackbar';
 import PlateSelector from './PlateSelector'
 import './AddPlate.css';
 
+const ERROR_EMPTY_CANNOT_ADD = 'No plate selected to add.';
+const ERROR_EMPTY_CANNOT_SUBTRACT = 'No plate selected to substract.';
+const ERROR_CANNOT_SUBTRACT = 'Cannot subtract any more from this plate type.';
 
 export default function AddPlate() {
 
@@ -29,6 +33,7 @@ export default function AddPlate() {
     const increment = () => {
         const selectedPlate = getSelectedPlate();
 
+        // Increment if there is an actively selected plate
         if (selectedPlate) {
             // Get deep copy of plate context
             let updatedPlateAmount = _.cloneDeep(plateAmount);
@@ -43,6 +48,11 @@ export default function AddPlate() {
 
             // Update state context
             setPlateAmount(updatedPlateAmount);
+        }
+
+        // If there is no actively selected plate, display error validation
+        else {
+            handleSnackbarOpen(ERROR_EMPTY_CANNOT_ADD);
         }
     }
 
@@ -65,8 +75,34 @@ export default function AddPlate() {
                 // Update state context
                 setPlateAmount(updatedPlateAmount);
             }
+            // If there are 0 plates, display error validation
+            else {
+                handleSnackbarOpen(ERROR_CANNOT_SUBTRACT);
+            }
         }
+
+        // If there is no actively selected plate, display error validation
+        else {
+            handleSnackbarOpen(ERROR_EMPTY_CANNOT_SUBTRACT);
+        }
+
     }
+
+    // Snackbar
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+
+    const handleSnackbarOpen = (message) => {
+        setSnackbarMessage(message);
+        setOpenSnackbar(true);
+    }
+
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
+    };
 
     return (
         <div className='plate-selection--controls'>
@@ -120,6 +156,15 @@ export default function AddPlate() {
                     </IconButton>
                 </div>
             </div>
+
+            <Snackbar
+                open={openSnackbar}
+                message={snackbarMessage}
+                onClose={handleSnackbarClose}
+                autoHideDuration={6000}
+            >
+            </Snackbar>
+
         </div>
     );
 };
