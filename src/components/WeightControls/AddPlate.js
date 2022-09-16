@@ -5,6 +5,7 @@ import _ from 'lodash';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import CloseIcon from '@mui/icons-material/Close';
 import Snackbar from '@mui/material/Snackbar';
 import PlateSelector from './PlateSelector'
 import './AddPlate.css';
@@ -104,6 +105,17 @@ export default function AddPlate() {
         setOpenSnackbar(false);
     };
 
+    const action = (
+        <IconButton
+            size="small"
+            aria-label="close"
+            color="inherit"
+            onClick={handleSnackbarClose}
+        >
+            <CloseIcon fontSize="small" />
+        </IconButton>
+    );
+
     return (
         <div className='plate-selection--controls'>
             <div className='plate-selection--choices'>
@@ -162,6 +174,7 @@ export default function AddPlate() {
                 message={snackbarMessage}
                 onClose={handleSnackbarClose}
                 autoHideDuration={6000}
+                action={action}
             >
             </Snackbar>
 
