@@ -1,0 +1,42 @@
+.menu {
+    height: 70vh;
+    /* max-width: 768px; */
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.menu h2 {
+    margin: 15px 0px;
+}
+
+.menu--header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu--close {
+    align-self: center;
+}
+
+.menu--body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu--add-profile {
+    margin: 20px 0px;
+}
+
+.menu--add-profile button {
+    height: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+}

@@ -1,0 +1,14 @@
+.menu--profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu--profile-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu--profile-text {
+    margin: 0px 10px;
+}

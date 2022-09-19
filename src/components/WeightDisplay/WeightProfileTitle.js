@@ -70,14 +70,16 @@ export default function WeightProfileTitle() {
     });
 
     return (
-        <div className='profile'>            
+        <div className='profile'>
             <input ref={inputRef} className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler}></input>
-            <IconButton aria-label='edit-title' size='small' style={{ display: isToggle ? 'none' : 'block' }} onClick={editButtonHandler}>
-                <EditIcon fontSize='inherit' />
-            </IconButton>
-            <IconButton aria-label='submit-title' size='small' style={{ display: isToggle ? 'block' : 'none' }} onClick={doneButtonHandler}>
-                <DoneIcon fontSize='inherit' />
-            </IconButton>
+            <div>
+                <IconButton aria-label='edit-title' size='small' style={{ display: isToggle ? 'none' : 'block' }} onClick={editButtonHandler}>
+                    <EditIcon fontSize='inherit' />
+                </IconButton>
+                <IconButton aria-label='submit-title' size='small' style={{ display: isToggle ? 'block' : 'none' }} onClick={doneButtonHandler}>
+                    <DoneIcon fontSize='inherit' />
+                </IconButton>
+            </div>
 
         </div>
     )
