@@ -1,0 +1,43 @@
+.menu {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.menu h2 {
+    margin: 15px 0px;
+}
+
+.menu--header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu--close {
+    align-self: center;
+}
+
+.menu--body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu--profile-actions {
+    margin: 20px 0px;
+}
+
+.menu--profile-actions button {
+    height: 50px;
+    width: 100%;
+    background: white;
+    color: black;
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+    margin: 2px 0px;
+}

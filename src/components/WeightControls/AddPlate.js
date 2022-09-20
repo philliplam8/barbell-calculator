@@ -11,7 +11,7 @@ import PlateSelector from './PlateSelector'
 import './AddPlate.css';
 
 const ERROR_EMPTY_CANNOT_ADD = 'No plate selected to add.';
-const ERROR_EMPTY_CANNOT_SUBTRACT = 'No plate selected to substract.';
+const ERROR_EMPTY_CANNOT_SUBTRACT = 'No plate selected to subtract.';
 const ERROR_CANNOT_SUBTRACT = 'Cannot subtract any more from this plate type.';
 
 export default function AddPlate() {

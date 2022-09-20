@@ -2,11 +2,11 @@ import { useContext, useState, useEffect } from 'react';
 import { WeightContext } from '../../contexts/WeightContext';
 import _ from 'lodash';
 import WeightProfileTitle from './WeightProfileTitle';
+import WeightProfileDrawer from '../WeightProfileDrawer/WeightProfileDrawer';
 import LoadedBarbell from '../Barbell/LoadedBarbell';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion, useAnimationControls } from "framer-motion"
 import './WeightProfile.css';
 
@@ -44,11 +44,7 @@ export default function WeightProfile() {
             <div className='card'>
                 <div className='card--header'>
                     <div className='card--header-icon card--header-icon-menu'>
-                        <Tooltip title={'Switch Weight Profile (feature in progress!)'} enterTouchDelay={0} >
-                            <IconButton aria-label="menu" size="large">
-                                <ExpandMoreIcon fontSize="inherit" />
-                            </IconButton>
-                        </Tooltip>
+                        <WeightProfileDrawer />
                     </div>
 
                     <div>

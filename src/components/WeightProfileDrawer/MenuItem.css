@@ -1,0 +1,20 @@
+.menu--item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 7px 0px;
+}
+
+.menu--item-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu--item-text {
+    margin: 0px 10px;
+}
+
+.menu--item-status {
+    display: flex;
+    align-items: center;
+}
