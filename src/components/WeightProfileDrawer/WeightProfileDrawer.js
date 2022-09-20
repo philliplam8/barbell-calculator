@@ -27,7 +27,7 @@ export default function WeightProfileDrawer() {
 
     return (
         <div>
-            <Tooltip title={'Switch Weight Profile'} enterTouchDelay={0} onClick={toggleDrawer(DRAWER_DIRECTION, true)}>
+            <Tooltip title={'Switch Weight Profile (feature in progress!)'} enterTouchDelay={0} onClick={toggleDrawer(DRAWER_DIRECTION, true)}>
                 <IconButton aria-label="menu" size="large">
                     <ExpandMoreIcon fontSize="inherit" />
                 </IconButton>
