@@ -1,14 +1,20 @@
-.menu--profile {
+.menu--item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 7px 0px;
 }
 
-.menu--profile-info {
+.menu--item-info {
     display: flex;
     flex-direction: row;
 }
 
-.menu--profile-text {
+.menu--item-text {
     margin: 0px 10px;
+}
+
+.menu--item-status {
+    display: flex;
+    align-items: center;
 }

@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from 'react';
 
 // Initial Values
-const TITLE_DEFAULT = 'PROFILE #2: BENCH PRESS SET';
+const TITLE_DEFAULT = 'BENCH PRESS SET';
 const INTIIAL_BAR_WEIGHT = 45; // Most common barbell weight
 const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 const INITIAL_PLATE_AMOUNT = 0;

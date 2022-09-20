@@ -1,12 +1,10 @@
 .menu {
-    height: 70vh;
-    /* max-width: 768px; */
     padding: 5px 20px;
     display: flex;
     flex-direction: column;
     background-color: white;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 .menu h2 {
@@ -30,13 +28,16 @@
     justify-content: space-between;
 }
 
-.menu--add-profile {
+.menu--profile-actions {
     margin: 20px 0px;
 }
 
-.menu--add-profile button {
-    height: 20px;
+.menu--profile-actions button {
+    height: 50px;
     width: 100%;
-    border: none;
+    background: white;
+    color: black;
+    border: 1px solid #bdbdbd;
     border-radius: 20px;
+    margin: 2px 0px;
 }
