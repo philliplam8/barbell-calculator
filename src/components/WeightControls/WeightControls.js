@@ -1,17 +1,24 @@
 import { useContext, useEffect } from 'react';
 import { WeightContext } from '../../contexts/WeightContext';
+import { MenuContext } from '../../contexts/MenuContext';
 import ControlTabs from './ControlTabs';
 import './WeightControls.css';
 
+const unit = 'lb';
+
 export default function WeightControls() {
 
-    const { totalPlatesValue, totalWeightValue, barWeightValue, plateAmountValue } = useContext(WeightContext);
+    // Weight Display
+    const { totalPlatesValue, totalWeightValue, barWeightValue, plateAmountValue, importedProfileValue } = useContext(WeightContext);
     const [totalPlates, setTotalPlates] = totalPlatesValue;
     const [totalWeight, setTotalWeight] = totalWeightValue;
     const [barWeight, setBarWeight] = barWeightValue;
     const [plateAmount, setPlateAmount] = plateAmountValue;
+    const [importedProfile, setImportedProfile] = importedProfileValue;
 
-    const unit = 'lb';
+    // Menu Drawer
+    const { menusValue } = useContext(MenuContext);
+    const [menus, setMenus] = menusValue;
 
     const calculateTotalWeight = () => {
 
@@ -28,6 +35,11 @@ export default function WeightControls() {
 
         // Update total weight displayed
         setTotalWeight(updatedTotalWeight);
+
+        // Update total weight in menu
+        // Create copy of menu
+        let updatedMenu = { ...menus };
+        // Update total weight within specific menu item
 
         // Update total number of plates
         setTotalPlates(newTotalPlates);

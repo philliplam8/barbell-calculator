@@ -3,9 +3,9 @@ import React, { useState, createContext, useEffect } from 'react';
 // Initial Values
 const TITLE_DEFAULT = 'New Workout Set';
 const INTIIAL_BAR_WEIGHT = 45; // Most common barbell weight
-const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 const INITIAL_PLATE_AMOUNT = 0;
 const INITIAL_PROFILE_NAME = 'profile1';
+export const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 
 export const INITIAL_WEIGHT_PROFILE = {
     key: INITIAL_PROFILE_NAME,
@@ -78,7 +78,8 @@ export const INITIAL_WEIGHT_PROFILE = {
                     currentlySelected: false
                 }
             ]
-    }
+    },
+    totalWeight: INITIAL_TOTAL_WEIGHT
 }
 
 export const WeightContext = createContext();
@@ -146,10 +147,11 @@ export const WeightProvider = props => {
             key: importedProfile,
             profileTitle: title,
             barWeight: barWeight,
-            plateAmount: plateAmount
+            plateAmount: plateAmount,
+            totalWeight: totalWeight
         }
         localStorage.setItem(importedProfile, JSON.stringify(newWeightProfile));
-    }, [title, barWeight, plateAmount, importedProfile]);
+    }, [title, barWeight, plateAmount, importedProfile, totalWeight]);
 
     return (
         <WeightContext.Provider

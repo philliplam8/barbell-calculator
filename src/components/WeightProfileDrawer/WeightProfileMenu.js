@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import { INITIAL_WEIGHT_PROFILE } from '../../contexts/WeightContext';
+import { INITIAL_WEIGHT_PROFILE, INITIAL_TOTAL_WEIGHT } from '../../contexts/WeightContext';
 import { MenuContext } from '../../contexts/MenuContext';
 import MenuItem from './MenuItem';
+import getEmoji from '../../helper/emojiRandomizer';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -12,14 +13,23 @@ export default function WeightProfileMenu(props) {
     const [menus, setMenus] = menusValue;
 
     const addMenuItemHandler = () => {
+
+        // Add new default profile to localStorage
         const localStorageLength = localStorage.length;
         let WEIGHT_PROFILE = { ...INITIAL_WEIGHT_PROFILE };
         WEIGHT_PROFILE.key = `profile${localStorageLength + 1}`;
+        WEIGHT_PROFILE.profileTitle = `${getEmoji()} ${WEIGHT_PROFILE.profileTitle}`;
         localStorage.setItem(`profile${localStorageLength + 1}`, JSON.stringify(WEIGHT_PROFILE));
 
-        // TODO update setMenus: 
-        // - set the newest menu to current
-        // - display that profile/load it into context
+        // Add new default profile to state context
+        let updatedMenu = { ...menus };
+        updatedMenu.menuItems[localStorageLength] = {
+            key: localStorageLength,
+            profileTitle: WEIGHT_PROFILE.profileTitle,
+            weight: INITIAL_TOTAL_WEIGHT
+        }
+
+        setMenus(updatedMenu);
     }
 
     const deleteMenuItemHandler = () => {
@@ -47,14 +57,6 @@ export default function WeightProfileMenu(props) {
 
             <div className='menu--body'>
                 <div className='menu--body-items'>
-                    {/* {menus.menuItems.map(item => (
-                        <MenuItem
-                            key={item.key}
-                            totalWeight={item.weight}
-                            title={item.title}
-                            profileNumber={item.key + 1}
-                            current={item.current} />
-                    ))} */}
 
                     {menus.menuItems.map(item => (
                         <MenuItem
@@ -67,14 +69,13 @@ export default function WeightProfileMenu(props) {
                         />
                     ))}
 
-
                 </div>
 
                 <div className='menu--profile-actions'>
                     <Button variant='outlined' onClick={addMenuItemHandler}>Add Profile</Button>
                     {/* <Button variant='outlined' onClick={deleteMenuItemHandler}>Delete A Profile</Button> */}
                     {/* for debugging/dev below*/}
-                    <Button onClick={devDeleteAll}>Delete All Profiles (Dev)</Button>
+                    <Button variant='outlined' onClick={devDeleteAll}>Delete All Profiles (Dev)</Button>
                 </div>
             </div>
 
