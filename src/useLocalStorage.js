@@ -25,7 +25,6 @@ export function useLocalStorage(objectKey, defaultValue, setContextState) {
     useEffect(() => {
         // Create copy of local storage
         let updatedProfile = JSON.parse(localStorage.getItem(KEY));
-        console.log(updatedProfile);
         let updatedValue;
 
         if (updatedProfile) {

@@ -1,13 +1,14 @@
-import React, { useState, createContext, useContext, useEffect } from 'react';
-import { WeightContext } from './WeightContext';
+import React, { useState, createContext, useEffect } from 'react';
 
 export const MenuContext = createContext();
 
 export const MenuProvider = props => {
 
-    const { totalWeightValue, profileTitleValue } = useContext(WeightContext);
-    const [title, setTitle] = profileTitleValue;
-    const [totalWeight, setTotalWeight] = totalWeightValue;
+    const [profiles, setProfiles] = useState();
+    useEffect(() => {
+        const storage = { ...localStorage };
+        setProfiles(storage);
+    }, [setProfiles])
 
     // States
     const [menus, setMenus] = useState({
@@ -15,27 +16,28 @@ export const MenuProvider = props => {
             [
                 {
                     key: 0,
-                    title: title,
-                    weight: totalWeight,
-                    current: true
+                    profileTitle: 'BenchPress',
+                    weight: 225,
                 },
                 {
                     key: 1,
-                    title: 'Deadlift',
+                    profileTitle: 'Deadlift',
                     weight: 225,
-                    current: false
                 },
                 {
                     key: 2,
-                    title: 'Squats',
+                    profileTitle: 'Squats',
                     weight: 190,
-                    current: false
                 }
             ]
     });
 
     return (
-        <MenuContext.Provider value={[menus, setMenus]}>
+        <MenuContext.Provider
+            value={{
+                menusValue: [menus, setMenus]
+            }}
+        >
             {props.children}
         </MenuContext.Provider>
     );

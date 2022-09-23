@@ -1,6 +1,5 @@
 import { useEffect, useContext, useState, useRef } from 'react';
-import { WeightContext, INITIAL_WEIGHT_PROFILE } from '../../contexts/WeightContext';
-import { useLocalStorage } from '../../useLocalStorage';
+import { WeightContext } from '../../contexts/WeightContext';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DoneIcon from '@mui/icons-material/Done';
@@ -9,15 +8,15 @@ import './WeightProfileTitle.css';
 export default function WeightProfileTitle() {
 
     const TITLE_EMPTY = 'UNTITLED PROFILE';
-    const LOCAL_STORAGE_OBJECT_KEY = 'profileTitle';
+    // const LOCAL_STORAGE_OBJECT_KEY = 'profileTitle';
 
     const { profileTitleValue } = useContext(WeightContext);
-    // const [title, setTitle] = profileTitleValue;
-    const [titleContext, setTitleContext] = profileTitleValue;
-    const [title, setTitle] = useLocalStorage(
-        LOCAL_STORAGE_OBJECT_KEY,
-        INITIAL_WEIGHT_PROFILE.profileTitle,
-        setTitleContext);
+    const [title, setTitle] = profileTitleValue;
+    // const [titleContext, setTitleContext] = profileTitleValue;
+    // const [title, setTitle] = useLocalStorage(
+    //     LOCAL_STORAGE_OBJECT_KEY,
+    //     INITIAL_WEIGHT_PROFILE.profileTitle,
+    //     setTitleContext);
 
     const [isToggle, setIsToggle] = useState(false);
     const inputRef = useRef(null);

@@ -10,10 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function WeightProfileDrawer() {
 
     const [state, setState] = useState({
-        top: false,
-        left: false,
         bottom: false,
-        right: false,
     });
 
     const DRAWER_DIRECTION = "bottom";
@@ -40,7 +37,7 @@ export default function WeightProfileDrawer() {
                 onClose={toggleDrawer(DRAWER_DIRECTION, false)}
                 onOpen={toggleDrawer(DRAWER_DIRECTION, true)}
             >
-                <WeightProfileMenu />
+                <WeightProfileMenu toggleDrawer={toggleDrawer} />
             </SwipeableDrawer>
         </div>
     );
