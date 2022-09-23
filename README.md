@@ -24,10 +24,17 @@ https://philliplam8.github.io/barbell-calculator/
 ### Weight Profile Cached
 
 - Profile Title, Plate Amounts, and Barbell Weight data are all cached in localStorage and persist for future visits to the site
+- This will remember the weight you used from your last workout!
+
+### Multiple Profiles
+
+- Add and save the weight setup for different exercises by adding multiple profiles!
+- Quickly switch between saved profiles 
 
 ## Roadmap
+
 - [x] Collapse plates of the same type on the display once a plate amount threshold is reached
 - [x] Store single weight profile in localStorage
-- [ ] Allow user to create and switch between multiple weight profiles
-- [ ] Store multiple weight profiles in localStorage
+- [x] Allow user to create and switch between multiple weight profiles
+- [x] Store multiple weight profiles in localStorage
 - [ ] Custom plate values
