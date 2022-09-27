@@ -16,13 +16,7 @@ const INITIAL_MENU_ITEMS = {
 export const MenuContext = createContext();
 
 export const MenuProvider = props => {
-
-    const [profiles, setProfiles] = useState();
-    useEffect(() => {
-        const storage = { ...localStorage };
-        setProfiles(storage);
-    }, [setProfiles])
-
+    
     // States
     const [menus, setMenus] = useState(() => {
         const storage = localStorage.getItem('profile1');
