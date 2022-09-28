@@ -6,7 +6,7 @@ const INITIAL_MENU_ITEMS = {
     menuItems:
         [
             {
-                key: 0,
+                key: 1,
                 profileTitle: getEmoji() + INITIAL_WEIGHT_PROFILE.profileTitle,
                 weight: INITIAL_TOTAL_WEIGHT,
             },
@@ -16,24 +16,28 @@ const INITIAL_MENU_ITEMS = {
 export const MenuContext = createContext();
 
 export const MenuProvider = props => {
-    
+
     // States
     const [menus, setMenus] = useState(() => {
-        const storage = localStorage.getItem('profile1');
+        const storage = localStorage.key(0);
+
+        // If there is existing menu items in localStorage, load them into context
         if (storage) {
             let menuItems = [];
             let updatedMenu = { menuItems };
 
             // parse each key value
             for (let i = 0; i < localStorage.length; i++) {
-                const profileKey = localStorage.key(i);
-                const localStorageProfile = JSON.parse(localStorage.getItem(profileKey));
+                const localStorageKey = localStorage.key(i);
+                const localStorageValue = JSON.parse(localStorage.getItem(localStorageKey));
 
                 // extract key, profileTitle, and totalWeight from key value
                 menuItems[i] = {
-                    key: i,
-                    profileTitle: localStorageProfile.profileTitle,
-                    weight: localStorageProfile.totalWeight
+                // menuItems[parseInt((localStorageKey).slice(7))] = {
+                    key: i + 1,
+                    // key: parseInt((localStorageKey).slice(7)),
+                    profileTitle: localStorageValue.profileTitle,
+                    weight: localStorageValue.totalWeight
                 }
             }
 

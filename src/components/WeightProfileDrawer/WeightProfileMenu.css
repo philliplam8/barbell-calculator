@@ -17,6 +17,12 @@
     justify-content: space-between;
 }
 
+.menu-header-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .menu--close {
     align-self: center;
 }
@@ -30,14 +36,12 @@
 
 .menu--profile-actions {
     margin: 20px 0px;
+    z-index: 2;
 }
 
 .menu--profile-actions button {
     height: 50px;
     width: 100%;
-    background: white;
-    color: black;
-    border: 1px solid #bdbdbd;
     border-radius: 20px;
     margin: 2px 0px;
 }
