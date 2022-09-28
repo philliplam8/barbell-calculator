@@ -11,7 +11,6 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
-import { TransitionGroup } from 'react-transition-group';
 import './WeightProfileMenu.css';
 
 const TOOL_TIP_TEXT = 'Delete All Profiles'
