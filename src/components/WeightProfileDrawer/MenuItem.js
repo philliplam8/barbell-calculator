@@ -109,7 +109,7 @@ export default function MenuItem(props) {
 
                     <Avatar
                         alt='Weight Profile Total Weight'
-                        sx={{ width: 60, height: 60, bgcolor: deepPurple[500] }}>
+                        sx={{ width: 60, height: 60, bgcolor: 'black' }}>
                         {menuWeight}lb
                     </Avatar>
 
