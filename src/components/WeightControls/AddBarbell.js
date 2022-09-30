@@ -29,8 +29,8 @@ export default function AddBarbell() {
 
     return (
         <div className='barbell--choices'>
-            <Barbell weight={0} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={10} unit={unit} barbellClass={'barbell--choice'} />
+            <Barbell weight={20} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={35} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={45} unit={unit} barbellClass={'barbell--choice'} />
             <Barbell weight={55} unit={unit} barbellClass={'barbell--choice'} />

@@ -41,7 +41,6 @@ function DisplayPlateGroup(props) {
                 id={`${props.key}-${props.weight}`}
                 key={`${props.key}-${props.weight}-${plateInstance.key}`}
                 weight={props.weight}
-                // amount={`x${props.amount / 2}`}
                 plateClass={props.plateClass}
                 plateDisplay={props.plateDisplay}
             />
@@ -71,15 +70,6 @@ export default function LoadedBarbell() {
     return (
         <div className='card--barbell'>
             <div className='barbell--plate-holder barbell--plate-holder-left' onClick={plateTabHandler}>
-                {/* {plateAmount.plates.map((plate) => (
-                    <Plate
-                        key={plate.key}
-                        weight={plate.weight}
-                        amount={plate.amount / 2}
-                        plateClass={plate.plateClass}
-                        plateDisplay={plate.plateDisplay}
-                    />
-                ))} */}
                 {plateAmount.plates.map(DisplayPlateGroup)}
             </div>
 
@@ -89,15 +79,6 @@ export default function LoadedBarbell() {
                 <div className='barbell--sleeve barbell--sleeve-right'></div>
             </div>
             <div className='barbell--plate-holder' onClick={plateTabHandler}>
-                {/* {[...plateAmount.plates].reverse().map(plate => (
-                    <Plate
-                        key={plate.key}
-                        weight={plate.weight}
-                        amount={plate.amount / 2}
-                        plateClass={plate.plateClass}
-                        plateDisplay={plate.plateDisplay}
-                    />
-                ))} */}
                 {[...plateAmount.plates].reverse().map(DisplayPlateGroup)}
             </div>
         </div>
