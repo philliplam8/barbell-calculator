@@ -4,7 +4,7 @@ import React, { useState, createContext, useEffect } from 'react';
 const TITLE_DEFAULT = 'New Workout Set';
 const INTIIAL_BAR_WEIGHT = 45; // Most common barbell weight
 const INITIAL_PLATE_AMOUNT = 0;
-const INITIAL_PROFILE_NAME = 'profile1';
+const INITIAL_PROFILE_NAME = 'profile0';
 export const INITIAL_TOTAL_WEIGHT = INTIIAL_BAR_WEIGHT;
 
 export const INITIAL_WEIGHT_PROFILE = {

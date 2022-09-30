@@ -70,7 +70,7 @@ export default function MenuItem(props) {
         // Remove from context
         let updatedMenu = { ...menus }
         for (let i = 0; i < updatedMenu.menuItems.length; i++) {
-            if (updatedMenu.menuItems[i].key === props.profileNumber) {
+            if (updatedMenu.menuItems[i].key.slice(7) === props.profileNumber) {
                 updatedMenu.menuItems.splice(i, 1);
                 setMenus(updatedMenu);
             }
@@ -117,7 +117,10 @@ export default function MenuItem(props) {
 
                     <div className='menu--item-text'>
                         <Typography variant='h6'>{menuTitle}</Typography>
-                        <Typography variant='body2'>Profile {props.profileNumber}</Typography>
+                        <div className='menu--item-subtitle'>
+                            <Typography variant='body2'>Profile {props.profileNumber}</Typography>
+                            {/* <Typography variant='subtitle2'>Plates: {props.plateWeight}lb • Barbell: {props.barWeight}lb</Typography> */}
+                        </div>
                     </div>
 
                 </div>

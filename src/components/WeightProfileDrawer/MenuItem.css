@@ -22,6 +22,20 @@
 
 .menu--item-text {
     margin: 0px 10px;
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+.menu--item-subtitle {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+    color: rgb(173, 172, 172);
+}
+
+.menu--chip {
+    display: flex;
+    justify-content: center;
 }
 
 .menu--item-icons {

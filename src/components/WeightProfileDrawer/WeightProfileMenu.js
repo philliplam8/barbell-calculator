@@ -13,7 +13,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import './WeightProfileMenu.css';
 
-const TOOL_TIP_TEXT = 'Delete All Profiles'
+const TOOL_TIP_TEXT = 'Delete All Profiles';
 
 export default function WeightProfileMenu(props) {
     const { menusValue } = useContext(MenuContext);
@@ -26,10 +26,8 @@ export default function WeightProfileMenu(props) {
 
     const addMenuItemHandler = () => {
 
-        const localStorageLength = localStorage.length;
-        // const newProfileNumber = localStorageLength + 1;
         const menuLength = menus.menuItems.length;
-        const newProfileNumber = menus.menuItems[menuLength - 1].key + 1;
+        const newProfileNumber = parseInt(menus.menuItems[menuLength - 1].key.toString().slice(7)) + 1;
 
         // Add new default profile to localStorage
         let WEIGHT_PROFILE = { ...INITIAL_WEIGHT_PROFILE };
@@ -39,8 +37,8 @@ export default function WeightProfileMenu(props) {
 
         // Add new default profile to menu state context
         let updatedMenu = { ...menus };
-        updatedMenu.menuItems[localStorageLength] = {
-            key: newProfileNumber,
+        updatedMenu.menuItems[menuLength] = {
+            key: `profile${newProfileNumber}`,
             profileTitle: WEIGHT_PROFILE.profileTitle,
             weight: INITIAL_TOTAL_WEIGHT
         }
@@ -99,7 +97,9 @@ export default function WeightProfileMenu(props) {
                             menuItem={item.menuItem}
                             title={item.profileTitle}
                             totalWeight={item.weight}
-                            profileNumber={item.key}
+                            // barWeight={item.barWeight}
+                            // plateWeight={item.weight - item.barWeight}
+                            profileNumber={item.key.slice(7)}
                             toggleDrawer={props.toggleDrawer}
                             showDelete={deleteMode}
                         />
