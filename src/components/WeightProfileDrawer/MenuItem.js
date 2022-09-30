@@ -11,25 +11,14 @@ import Slide from '@mui/material/Slide';
 import { deepPurple } from '@mui/material/colors';
 import './MenuItem.css';
 
-function getTitleFromLocalStorage(menuItem) {
+function getProfileFromLocalStorage(menuItem) {
     const storage = localStorage.getItem(menuItem);
     if (storage) {
         const weightProfile = JSON.parse(storage);
-        return weightProfile.profileTitle;
+        return weightProfile;
     }
     else {
-        return INITIAL_WEIGHT_PROFILE.profileTitle;
-    }
-}
-
-function getTotalWeightFromLocalStorage(menuItem) {
-    const storage = localStorage.getItem(menuItem);
-    if (storage) {
-        const weightProfile = JSON.parse(storage);
-        return weightProfile.totalWeight;
-    }
-    else {
-        return INITIAL_WEIGHT_PROFILE.totalWeight;
+        return INITIAL_WEIGHT_PROFILE;
     }
 }
 
@@ -43,8 +32,11 @@ export default function MenuItem(props) {
     const [menus, setMenus] = menusValue;
 
     // Menu State from LocalStorage
-    const [menuTitle, setMenuTitle] = useState(getTitleFromLocalStorage(MENU_ITEM));
-    const [menuWeight, setMenuWeight] = useState(getTotalWeightFromLocalStorage(MENU_ITEM));
+    const [menuTitle, setMenuTitle] = useState(getProfileFromLocalStorage(MENU_ITEM).profileTitle);
+    const [menuWeight, setMenuWeight] = useState(getProfileFromLocalStorage(MENU_ITEM).totalWeight);
+    const [menuBarWeight, setMenuBarWeight] = useState(getProfileFromLocalStorage(MENU_ITEM).barWeight);
+    const [menuPlateWeight, setMenuPlateWeight] = useState(menuWeight - menuBarWeight);
+
 
     // Weight State Context
     const { importedProfileValue, totalWeightValue } = useContext(WeightContext);
@@ -59,10 +51,16 @@ export default function MenuItem(props) {
         }
 
         // Update the title based on local storage value
-        setMenuTitle(getTitleFromLocalStorage(MENU_ITEM));
+        setMenuTitle(getProfileFromLocalStorage(MENU_ITEM).profileTitle);
 
-        // Update the weight based on the local storage value
-        setMenuWeight(getTotalWeightFromLocalStorage(MENU_ITEM));
+        // Update the total weight based on the local storage value
+        setMenuWeight(getProfileFromLocalStorage(MENU_ITEM).totalWeight);
+
+        // Update the bar weight based on the local storage value
+        setMenuBarWeight(getProfileFromLocalStorage(MENU_ITEM).barWeight);
+
+        // Update the plate weight based on the local storage value
+        setMenuPlateWeight(getProfileFromLocalStorage(MENU_ITEM).plateWeight);
     }
 
     const deleteHandler = () => {
@@ -85,7 +83,6 @@ export default function MenuItem(props) {
 
             {/* Delete Menu Item icons */}
             {props.showDelete ?
-
                 <div className='menu--item-icons delete-icon'>
                     <Slide direction="right" in={props.showDelete} mountOnEnter unmountOnExit>
                         <IconButton
@@ -95,11 +92,12 @@ export default function MenuItem(props) {
                             aria-label={`Delete profile ${props.profileNumber}`}
                             size='small'
                         >
-                            <RemoveCircleOutlineIcon />
+                            <Tooltip arrow title={'Delete'}>
+                                <RemoveCircleOutlineIcon />
+                            </Tooltip>
                         </IconButton>
                     </Slide>
                 </div>
-
                 : null
             }
 
@@ -118,8 +116,8 @@ export default function MenuItem(props) {
                     <div className='menu--item-text'>
                         <Typography variant='h6'>{menuTitle}</Typography>
                         <div className='menu--item-subtitle'>
-                            <Typography variant='body2'>Profile {props.profileNumber}</Typography>
-                            {/* <Typography variant='subtitle2'>Plates: {props.plateWeight}lb • Barbell: {props.barWeight}lb</Typography> */}
+                            {/* <Typography variant='body2'>Profile {props.profileNumber}</Typography> */}
+                            <Typography variant='subtitle2'>Plates: {menuPlateWeight}lb • Barbell: {menuBarWeight}lb</Typography>
                         </div>
                     </div>
 

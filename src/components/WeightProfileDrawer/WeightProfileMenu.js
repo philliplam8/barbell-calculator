@@ -97,8 +97,8 @@ export default function WeightProfileMenu(props) {
                             menuItem={item.menuItem}
                             title={item.profileTitle}
                             totalWeight={item.weight}
-                            // barWeight={item.barWeight}
-                            // plateWeight={item.weight - item.barWeight}
+                            barWeight={item.barWeight}
+                            plateWeight={item.weight - item.barWeight}
                             profileNumber={item.key.slice(7)}
                             toggleDrawer={props.toggleDrawer}
                             showDelete={deleteMode}
