@@ -50,17 +50,20 @@ export default function MenuItem(props) {
             setImportedProfile(MENU_ITEM);
         }
 
+
+        // Update menu based on localStorage values
+        const menuProfileTitle = getProfileFromLocalStorage(MENU_ITEM).profileTitle;
+        const menuTotalWeight = getProfileFromLocalStorage(MENU_ITEM).totalWeight;
+        const menuBarWeight = getProfileFromLocalStorage(MENU_ITEM).barWeight;
+        const menuPlateweight = menuTotalWeight - menuBarWeight;
         // Update the title based on local storage value
-        setMenuTitle(getProfileFromLocalStorage(MENU_ITEM).profileTitle);
-
+        setMenuTitle(menuProfileTitle);
         // Update the total weight based on the local storage value
-        setMenuWeight(getProfileFromLocalStorage(MENU_ITEM).totalWeight);
-
+        setMenuWeight(menuTotalWeight);
         // Update the bar weight based on the local storage value
-        setMenuBarWeight(getProfileFromLocalStorage(MENU_ITEM).barWeight);
-
+        setMenuBarWeight(menuBarWeight);
         // Update the plate weight based on the local storage value
-        setMenuPlateWeight(getProfileFromLocalStorage(MENU_ITEM).plateWeight);
+        setMenuPlateWeight(menuPlateweight);
     }
 
     const deleteHandler = () => {
