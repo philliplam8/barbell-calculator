@@ -66,7 +66,7 @@ export default function WeightProfileMenu(props) {
             <div className='menu--header'>
                 <div className='menu-header-title'>
                     {/* <ModalDeleteAll /> */}
-                    {deleteMode ?
+                    {deleteMode && (
                         <Slide direction="right" in={deleteMode} mountOnEnter unmountOnExit>
                             <Tooltip title={TOOL_TIP_TEXT} enterTouchDelay={0} arrow>
                                 <IconButton aria-label='delete all profiles' onClick={deleteAllHandler}>
@@ -74,7 +74,7 @@ export default function WeightProfileMenu(props) {
                                 </IconButton>
                             </Tooltip>
                         </Slide>
-                        : null}
+                    )}
                     <h2>
                         Profiles
                     </h2>

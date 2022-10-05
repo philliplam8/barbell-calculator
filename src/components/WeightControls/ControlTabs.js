@@ -25,8 +25,7 @@ function TabPanel(props) {
                 <Box sx={{ p: 3 }}>
                     <Typography component={'span'} variant={'body2'}>{children}</Typography>
                 </Box>
-            )
-            }
+            )}
         </div>
     );
 }

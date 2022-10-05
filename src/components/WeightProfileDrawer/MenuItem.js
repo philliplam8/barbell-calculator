@@ -85,7 +85,7 @@ export default function MenuItem(props) {
         <div className='menu--item-row'>
 
             {/* Delete Menu Item icons */}
-            {props.showDelete ?
+            {props.showDelete && (
                 <div className='menu--item-icons delete-icon'>
                     <Slide direction="right" in={props.showDelete} mountOnEnter unmountOnExit>
                         <IconButton
@@ -101,12 +101,11 @@ export default function MenuItem(props) {
                         </IconButton>
                     </Slide>
                 </div>
-                : null
-            }
+            )}
 
             <div className='menu--item'
                 onClick={menuItemClickHandler}
-                onMouseUp={MENU_ITEM !== importedProfile ? props.toggleDrawer("bottom", false) : null}>
+                onMouseUp={MENU_ITEM !== importedProfile && (props.toggleDrawer("bottom", false))}>
 
                 <div className='menu--item-info'>
 
@@ -129,10 +128,9 @@ export default function MenuItem(props) {
                 {/* Menu UI automatically updates to show the currently selected menu item */}
                 <div className='menu--item-icons'>
                     {
-                        MENU_ITEM === importedProfile ?
+                        MENU_ITEM === importedProfile && (
                             <CheckIcon color='primary' />
-                            : null
-                    }
+                        )}
                 </div>
             </div>
         </div>
