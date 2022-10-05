@@ -1,6 +1,11 @@
 .barbell--choices {
-    height: 200px;
+    height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.barbell--choices-custom {
+    margin-top: 10px;
+    width: 100%;
 }
