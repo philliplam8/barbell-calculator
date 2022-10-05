@@ -102,9 +102,10 @@ export default function MenuItem(props) {
                 </div>
             )}
 
-            <div className='menu--item'
-                onClick={menuItemClickHandler}
-                onMouseUp={MENU_ITEM !== importedProfile ? props.toggleDrawer("bottom", false) : null}>
+            <div className={`menu--item ${props.showDelete ? null: 'menu--item-edit'}`}
+                onClick={props.showDelete ? null : menuItemClickHandler}
+                onMouseUp={MENU_ITEM !== importedProfile && !props.showDelete ? props.toggleDrawer("bottom", false) : null}>
+
 
                 <div className='menu--item-info'>
 
