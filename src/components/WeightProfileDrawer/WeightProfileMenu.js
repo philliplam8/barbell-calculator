@@ -16,9 +16,9 @@ import './WeightProfileMenu.css';
 const TOOL_TIP_TEXT = 'Delete All Profiles';
 
 export default function WeightProfileMenu(props) {
-    const { menusValue } = useContext(MenuContext);
+    const { menusValue, deleteModeValue } = useContext(MenuContext);
     const [menus, setMenus] = menusValue;
-    const [deleteMode, setDeleteMode] = useState(false);
+    const [deleteMode, setDeleteMode] = deleteModeValue;
 
     // Weight State Context
     const { importedProfileValue } = useContext(WeightContext);
@@ -69,18 +69,14 @@ export default function WeightProfileMenu(props) {
             <div className='menu--header'>
                 <div className='menu-header-title'>
                     {/* <ModalDeleteAll /> */}
-                    {deleteMode && (
-                        <Slide direction="right" in={deleteMode} mountOnEnter unmountOnExit>
-                            <Tooltip title={TOOL_TIP_TEXT} enterTouchDelay={0} arrow>
-                                <IconButton aria-label='delete all profiles' onClick={deleteAllHandler}>
-                                    <DeleteSweepIcon fontSize='inherit' />
-                                </IconButton>
-                            </Tooltip>
-                        </Slide>
-                    )}
-                    <h2>
-                        Profiles
-                    </h2>
+                    <Slide direction="right" in={deleteMode} mountOnEnter unmountOnExit>
+                        <Tooltip title={TOOL_TIP_TEXT} enterTouchDelay={0} arrow>
+                            <IconButton aria-label='delete all profiles' onClick={deleteAllHandler}>
+                                <DeleteSweepIcon fontSize='inherit' />
+                            </IconButton>
+                        </Tooltip>
+                    </Slide>
+                    <h2>Profiles</h2>
                 </div>
 
                 <div className='menu--close'>
@@ -93,7 +89,6 @@ export default function WeightProfileMenu(props) {
 
             <div className='menu--body'>
                 <div className='menu--body-items'>
-                    {/* <TransitionGroup> */}
                     {menus.menuItems.map(item => (
                         <MenuItem
                             key={item.key}
@@ -107,7 +102,6 @@ export default function WeightProfileMenu(props) {
                             showDelete={deleteMode}
                         />
                     ))}
-                    {/* </TransitionGroup> */}
                 </div>
 
                 <div className='menu--profile-actions'>

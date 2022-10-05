@@ -27,8 +27,9 @@ export default function MenuItem(props) {
     const MENU_ITEM = `profile${props.profileNumber}`
 
     // Menu State Context
-    const { menusValue } = useContext(MenuContext);
+    const { menusValue, deleteModeValue } = useContext(MenuContext);
     const [menus, setMenus] = menusValue;
+    const [deleteMode, setDeleteMode] = deleteModeValue;
 
     // Menu State from LocalStorage
     const [menuTitle, setMenuTitle] = useState(getProfileFromLocalStorage(MENU_ITEM).profileTitle);
@@ -84,27 +85,24 @@ export default function MenuItem(props) {
         <div className='menu--item-row'>
 
             {/* Delete Menu Item icons */}
-            {props.showDelete && (
-                <div className='menu--item-icons delete-icon'>
-                    <Slide direction="right" in={props.showDelete} mountOnEnter unmountOnExit>
-                        <IconButton
-                            onClick={deleteHandler}
-                            color='error'
-                            disabled={MENU_ITEM === importedProfile}
-                            aria-label={`Delete profile ${props.profileNumber}`}
-                            size='small'
-                        >
-                            <Tooltip arrow title={'Delete'}>
-                                <RemoveCircleOutlineIcon />
-                            </Tooltip>
-                        </IconButton>
-                    </Slide>
-                </div>
-            )}
+            <div className='menu--item-icons delete-icon'>
+                <Slide direction="right" in={deleteMode} mountOnEnter unmountOnExit>
+                    <IconButton
+                        onClick={deleteHandler}
+                        color='error'
+                        disabled={MENU_ITEM === importedProfile}
+                        aria-label={`Delete profile ${props.profileNumber}`}
+                        size='small'>
+                        <Tooltip arrow title={'Delete'}>
+                            <RemoveCircleOutlineIcon />
+                        </Tooltip>
+                    </IconButton>
+                </Slide>
+            </div>
 
-            <div className={`menu--item ${props.showDelete ? null: 'menu--item-edit'}`}
-                onClick={props.showDelete ? null : menuItemClickHandler}
-                onMouseUp={MENU_ITEM !== importedProfile && !props.showDelete ? props.toggleDrawer("bottom", false) : null}>
+            <div className={`menu--item ${deleteMode ? null : 'menu--item-edit'}`}
+                onClick={deleteMode ? null : menuItemClickHandler}
+                onMouseUp={MENU_ITEM !== importedProfile && !deleteMode ? props.toggleDrawer("bottom", false) : null}>
 
 
                 <div className='menu--item-info'>

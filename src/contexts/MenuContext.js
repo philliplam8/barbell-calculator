@@ -60,6 +60,8 @@ export const MenuProvider = props => {
         }
     });
 
+    const [deleteMode, setDeleteMode] = useState(false);
+
     // Update localStorage when updating the details for the menu items
     useEffect(() => {
         const newMenu = { ...menus };
@@ -69,7 +71,8 @@ export const MenuProvider = props => {
     return (
         <MenuContext.Provider
             value={{
-                menusValue: [menus, setMenus]
+                menusValue: [menus, setMenus],
+                deleteModeValue: [deleteMode, setDeleteMode]
             }}
         >
             {props.children}
