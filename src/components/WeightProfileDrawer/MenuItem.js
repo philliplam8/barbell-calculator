@@ -105,7 +105,7 @@ export default function MenuItem(props) {
 
             <div className='menu--item'
                 onClick={menuItemClickHandler}
-                onMouseUp={MENU_ITEM !== importedProfile && (props.toggleDrawer("bottom", false))}>
+                onMouseUp={MENU_ITEM !== importedProfile ? props.toggleDrawer("bottom", false) : null}>
 
                 <div className='menu--item-info'>
 

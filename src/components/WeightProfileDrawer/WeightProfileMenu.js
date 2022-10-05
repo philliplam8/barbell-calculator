@@ -44,6 +44,10 @@ export default function WeightProfileMenu(props) {
         }
 
         setMenus(updatedMenu);
+
+        // Set the newly added menu to the be selected menu
+        setImportedProfile(`profile${newProfileNumber}`);
+
     }
 
     const deleteMenuItemHandler = () => {
@@ -108,7 +112,7 @@ export default function WeightProfileMenu(props) {
                 </div>
 
                 <div className='menu--profile-actions'>
-                    <Button variant='outlined' disabled={deleteMode} onClick={addMenuItemHandler}>Add Profile</Button>
+                    <Button variant='outlined' disabled={deleteMode} onClick={addMenuItemHandler} onMouseUp={props.toggleDrawer("bottom", false)}>Add Profile</Button>
                     {
                         deleteMode ?
                             <div>
