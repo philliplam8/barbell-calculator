@@ -70,7 +70,7 @@ export default function WeightProfileTitle() {
 
     return (
         <div className='profile'>
-            <input ref={inputRef} className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler}></input>
+            <input ref={inputRef} className='profile--name' type='text' value={title} onClick={titleClickHandler} onChange={titleChangeHandler} onBlur={titleBlurHandler} onKeyUp={titleKeyUpHandler} aria-label={'Profile Title'}></input>
             <div>
                 <IconButton aria-label='edit-title' size='small' style={{ display: isToggle ? 'none' : 'block' }} onClick={editButtonHandler}>
                     <EditIcon fontSize='inherit' />
