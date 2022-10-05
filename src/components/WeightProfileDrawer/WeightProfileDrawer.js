@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { MenuContext } from '../../contexts/MenuContext';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import WeightProfileMenu from './WeightProfileMenu';
 
@@ -8,6 +9,9 @@ import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function WeightProfileDrawer() {
+
+    const { deleteModeValue } = useContext(MenuContext);
+    const [deleteMode, setDeleteMode] = deleteModeValue;
 
     const [state, setState] = useState({
         bottom: false,
@@ -20,7 +24,11 @@ export default function WeightProfileDrawer() {
         }
 
         setState({ ...state, [anchor]: open });
-    };
+
+        if (open === false) {
+            setDeleteMode(false);
+        };
+    }
 
     return (
         <div>
