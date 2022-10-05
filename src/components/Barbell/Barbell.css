@@ -1,6 +1,6 @@
 /* Barbell Displayed */
 .barbell--bar {
-    height: 20.79px;
+    height: 23px;
     width: 100%;
     background-color: #c5c5c5;
     cursor: pointer;
@@ -8,11 +8,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
-}
-
-.barbell--bar:hover {
-    color: white;
-    background-color: #6d6d6d;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .barbell--bar-selected {
@@ -26,15 +22,17 @@
 }
 
 .barbell--choice:hover {
-    height: 23px;
     font-size: large;
     color: white;
     background-color: #6d6d6d;
 }
 
 .barbell--bar-text {
-    position: relative;
-    transform: translateY(-75%);
+    height: 100%;
     text-align: center;
     font-weight: bold;
+}
+
+.barbell--bar-text p {
+    height: 100%;
 }

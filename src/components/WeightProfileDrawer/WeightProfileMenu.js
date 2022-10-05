@@ -47,7 +47,6 @@ export default function WeightProfileMenu(props) {
 
         // Set the newly added menu to the be selected menu
         setImportedProfile(`profile${newProfileNumber}`);
-
     }
 
     const deleteMenuItemHandler = () => {
