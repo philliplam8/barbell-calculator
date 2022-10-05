@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { WeightContext, INITIAL_WEIGHT_PROFILE } from '../../contexts/WeightContext';
 import { MenuContext } from '../../contexts/MenuContext';
 import { Typography } from '@mui/material';
@@ -8,7 +8,6 @@ import IconButton from '@mui/material/IconButton';
 import CheckIcon from '@mui/icons-material/Check';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import Slide from '@mui/material/Slide';
-import { deepPurple } from '@mui/material/colors';
 import './MenuItem.css';
 
 function getProfileFromLocalStorage(menuItem) {
@@ -112,13 +111,12 @@ export default function MenuItem(props) {
                     <Avatar
                         alt='Weight Profile Total Weight'
                         sx={{ width: 60, height: 60, bgcolor: 'black' }}>
-                        {menuWeight}lb
+                        {menuWeight}
                     </Avatar>
 
                     <div className='menu--item-text'>
                         <Typography variant='h6'>{menuTitle}</Typography>
                         <div className='menu--item-subtitle'>
-                            {/* <Typography variant='body2'>Profile {props.profileNumber}</Typography> */}
                             <Typography variant='subtitle2'>Plates: {menuPlateWeight}lb • Barbell: {menuBarWeight}lb</Typography>
                         </div>
                     </div>
