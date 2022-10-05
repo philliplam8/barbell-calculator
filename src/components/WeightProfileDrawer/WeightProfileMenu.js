@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { WeightContext, INITIAL_WEIGHT_PROFILE, INITIAL_TOTAL_WEIGHT } from '../../contexts/WeightContext';
 import { MenuContext } from '../../contexts/MenuContext';
 import MenuItem from './MenuItem';
-import ModalDeleteAll from './ModalDeleteAll';
 import getEmoji from '../../helper/emojiRandomizer';
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
 import './WeightProfileMenu.css';
